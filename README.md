@@ -6,6 +6,7 @@ Parking Space Monitoring System for Senior Project. Spring 2024.
 occupany+objectdetect-v2-working.py
 ```
 ## To run:
+Enter all the commands in order, one at a time!
 ### Install Repo Dependencies
 ```bash
 git clone https://github.com/olssone/parkit.git
