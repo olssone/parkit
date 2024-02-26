@@ -13,8 +13,11 @@ source opencv-env/bin/activate
 pip install -r requirements.txt
 
 ### Install YOLOv5 Dependencies
+```bash
 git clone https://github.com/ultralytics/yolov5.git
+```bash
 cd yolov5
+```bash
 pip install -r requirements.txt
 
 ### Run the actual Parking Space Monitor Script
