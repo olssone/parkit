@@ -2,6 +2,7 @@
 # a parking spot to monitor, detecting if the parking space is occupied, 
 # and wether the object occupying the parking space is a "parkable" vehicle.
 
+# This is Subha's copy.
 # We use the cv2 "OpenCV-Python" library for detecting space occupancy
 import cv2
 import numpy as np
