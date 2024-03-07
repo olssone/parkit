@@ -3,6 +3,7 @@
 # and wether the object occupying the parking space is a "parkable" vehicle.
 
 # We use the cv2 "OpenCV-Python" library for detecting space occupancy
+import subprocess
 import cv2
 import numpy as np
 import time
@@ -18,10 +19,10 @@ yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  # You can choose from 
 
 # Rectangle parameters: [x, y, width, height]
 # This is the rectangle box used for determining occupancy on a parking space
-rect = [200, 200, 500, 225]
+rect = [500, 500, 500, 225]
 
 # This is how fast the user can move the box
-move_dist = 5  # Distance to move the rectangle per key press
+move_dist = 50  # Distance to move the rectangle per key press
 
 # Reference frame used when checking occupancy
 reference_frame = None
@@ -43,15 +44,21 @@ msg_occu = ""
 # Car in Space Message
 msg_car = ""
 
+skip = True
+
 # Get the current date and time to create data file for each run
 current_time = datetime.datetime.now()
 formatted_time = current_time.strftime('%Y-%m-%d_%H-%M-%S')
-filename = "data/"+f'file_{formatted_time}.txt'
+filename = "../data/"+f'file_{formatted_time}.txt'
 with open(filename, 'w') as file:
     file.write(f"Park It! data for run at time {formatted_time}. \n")
 
 # Write the filename to env var so the file monitor can know which file to read next
-os.environ['PARKIT_DATAFILE'] = filename
+datafile = ".datafile"
+with open(datafile, "w") as file:
+    file.write(filename)
+
+
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
