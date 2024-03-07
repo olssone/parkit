@@ -6,12 +6,15 @@
 import cv2
 import numpy as np
 import time
+import datetime
+# for env var
+import os
 
 # The YOLOv5 package is used for image detection
 from yolov5 import YOLOv5
 
 # Load a pre-trained YOLOv5 model on the application server CPU
-yolov5_model = YOLOv5("yolov5s.pt", device="cpu")  # You can choose from yolov5s, yolov5m, yolov5l, yolov5x
+yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  # You can choose from yolov5s, yolov5m, yolov5l, yolov5x
 
 # Rectangle parameters: [x, y, width, height]
 # This is the rectangle box used for determining occupancy on a parking space
@@ -23,8 +26,13 @@ move_dist = 5  # Distance to move the rectangle per key press
 # Reference frame used when checking occupancy
 reference_frame = None
 
-# Timer used to detect if the frame has been occupiued for longer than 10 seconds
+# Timer used to detect if the frame has been occupiued for over a period of time
 occupied_start_time = None
+occupied_timer = 10
+
+# Timer used to determine if a car has been in a space for over a period of time
+car_in_space_time = None
+car_in_space_timer = 5
 
 # Occupancy flag used for coloring the rectangle
 confirmed_occupied = False
@@ -34,6 +42,16 @@ msg_occu = ""
 
 # Car in Space Message
 msg_car = ""
+
+# Get the current date and time to create data file for each run
+current_time = datetime.datetime.now()
+formatted_time = current_time.strftime('%Y-%m-%d_%H-%M-%S')
+filename = "data/"+f'file_{formatted_time}.txt'
+with open(filename, 'w') as file:
+    file.write(f"Park It! data for run at time {formatted_time}. \n")
+
+# Write the filename to env var so the file monitor can know which file to read next
+os.environ['PARKIT_DATAFILE'] = filename
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -80,14 +98,11 @@ while True:
     # Draw the rectangle and determine rectangle color
     rect_color = (0, 0, 255) if confirmed_occupied else (0, 255, 0)
     cv2.rectangle(frame, (rect[0], rect[1]), (rect[0]+rect[2], rect[1]+rect[3]), rect_color, 2)
-    
-
 
     # Check if the space is occupied
     occupied, _ = check_occupation(frame, rect, reference_frame)
-
     if occupied and occupied_start_time:
-        if time.time() - occupied_start_time > 10:
+        if time.time() - occupied_start_time > occupied_timer:
             msg_occu = "SPACE OCCUPIED"
             cv2.putText(frame, msg_occu, (rect[0], rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
             confirmed_occupied = True
@@ -102,28 +117,46 @@ while True:
 
             # Filter predictions for 'car' detections
             car_detections = predictions_df[predictions_df['name'] == 'car']
+            if len(car_detections) > 0:
+                msg_car = "CAR IN SPACE"
 
-            if len(car_detections) <= 0:
-                msg_car = "CAR NOT IN SPACE"
-            else:
-                # Iterate through each car detections to determine if car is in the rectange
+                # Check to see if timer has not been started yet
+                if car_in_space_time is None:
+                    car_in_space_time = time.time()
+                
+
+                # Iterate through each car detection to draw a rectangle if the car is in the space
                 for index, row in car_detections.iterrows():
-                    # Extract class name
-                    class_name = row['name'] 
-                    # Define system status message for car in space
+                    class_name = row['name']
+                    xmin, ymin, xmax, ymax = map(int, [row['xmin'], row['ymin'], row['xmax'], row['ymax']])
+                    
                     if class_name == "car":
-                        msg_car = "CAR IN SPACE"
-        
-                # Draw rectangles around detected objects only in the parking space rectangle
-                # xyxy is for [xmin, ymin, xmax, ymax, confidence, class]
-                for result in results.xyxy[0]: 
-                    xmin, ymin, xmax, ymax= map(int, result[:4])
-                    cv2.rectangle(frame, (xmin+rect[0], ymin+rect[1]), (xmax+rect[0], ymax+rect[1]), (255, 0, 0), 2)
+                        # Draw rectangle around the detected car
+                        cv2.rectangle(frame, (xmin+rect[0], ymin+rect[1]), (xmax+rect[0], ymax+rect[1]), (255, 0, 0), 2)
 
-            cv2.putText(frame, msg_car, (rect[0]+50, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
+                # Check if car as been in rect for over 5 seconds   
+                # Then write the data to file 
+                if time.time() - car_in_space_time > car_in_space_timer:
+                    with open(filename, 'a') as file:
+                        file.write(msg_car+"\n")
+                    
+
+            else:
+                # Car is not in space
+                msg_car = "CAR NOT IN SPACE"
+                # Reset timer
+                car_in_space_time = None
+                # Write data to file
+                with open(filename, 'a') as file:
+                    file.write(msg_car+"\n")
+
+            cv2.putText(frame, msg_car, (rect[0]+250, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
+
     else:
         msg_occu = "SPACE NOT OCCUPIED"
+        msg_car = "CAR NOT IN SPACE"
         confirmed_occupied = False
+    
 
     print(f"{msg_occu} - {msg_car}")
 
