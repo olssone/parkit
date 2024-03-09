@@ -3,13 +3,9 @@
 # and wether the object occupying the parking space is a "parkable" vehicle.
 
 # We use the cv2 "OpenCV-Python" library for detecting space occupancy
-import subprocess
 import cv2
-import numpy as np
 import time
-import datetime
-# for env var
-import os
+import paramiko
 
 # The YOLOv5 package is used for image detection
 from yolov5 import YOLOv5
@@ -44,21 +40,21 @@ msg_occu = ""
 # Car in Space Message
 msg_car = ""
 
-skip = True
+# last car msg
+last_car = ""
 
-# Get the current date and time to create data file for each run
-current_time = datetime.datetime.now()
-formatted_time = current_time.strftime('%Y-%m-%d_%H-%M-%S')
-filename = "../data/"+f'file_{formatted_time}.txt'
-with open(filename, 'w') as file:
-    file.write(f"Park It! data for run at time {formatted_time}. \n")
+#last occu msg
+last_occu = ""
 
-# Write the filename to env var so the file monitor can know which file to read next
-datafile = ".datafile"
-with open(datafile, "w") as file:
-    file.write(filename)
+# Set up the SSH client
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+# Connect to the server
+ssh.connect(hostname='pluto.hood.edu', username='eno1', password='hood10034685')
 
-
+# Define data stream path and make sure it is clean
+pluto_path = "~eno1/public_html/parkit/data.txt"
+ssh.exec_command(f"rm -rf {pluto_path}")
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -141,31 +137,31 @@ while True:
                         # Draw rectangle around the detected car
                         cv2.rectangle(frame, (xmin+rect[0], ymin+rect[1]), (xmax+rect[0], ymax+rect[1]), (255, 0, 0), 2)
 
-                # Check if car as been in rect for over 5 seconds   
-                # Then write the data to file 
-                if time.time() - car_in_space_time > car_in_space_timer:
-                    with open(filename, 'a') as file:
-                        file.write(msg_car+"\n")
-                    
-
             else:
                 # Car is not in space
                 msg_car = "CAR NOT IN SPACE"
                 # Reset timer
                 car_in_space_time = None
-                # Write data to file
-                with open(filename, 'a') as file:
-                    file.write(msg_car+"\n")
 
-            cv2.putText(frame, msg_car, (rect[0]+250, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
+            cv2.putText(frame, msg_car, (rect[0]+300, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
 
     else:
         msg_occu = "SPACE NOT OCCUPIED"
         msg_car = "CAR NOT IN SPACE"
         confirmed_occupied = False
     
+    formated_data = f"{msg_occu} - {msg_car}"
 
-    print(f"{msg_occu} - {msg_car}")
+    if msg_car != last_car:
+        last_car = msg_car
+        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data}")
+    
+    if msg_occu != last_occu:
+        last_occu = msg_occu
+        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data}")
+
+
+    
 
 
     cv2.imshow('frame', frame)
@@ -185,6 +181,8 @@ while True:
     elif key == ord('r'):  # Reset reference frame
         reference_frame = None
         confirmed_occupied = False
+
+    # Error logging and such...
 
 cap.release()
 cv2.destroyAllWindows()
