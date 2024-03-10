@@ -1,9 +1,9 @@
 # Park It!
 Parking Space Monitoring System for Senior Project. Spring 2024.
 
-## Working on:
+## eli is working on:
 ```bash
-occupany+objectdetect-v2-working.py
+workingExamples/ObjectOccupancyDetection.py
 ```
 ## To run:
 Enter all the commands in order, one at a time!
