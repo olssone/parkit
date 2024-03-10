@@ -3,19 +3,20 @@
 # and wether the object occupying the parking space is a "parkable" vehicle.
 
 # We use the cv2 "OpenCV-Python" library for detecting space occupancy
+# The YOLOv5 package is used for image detection
 import cv2
 import time
 import paramiko
-
-# The YOLOv5 package is used for image detection
 from yolov5 import YOLOv5
-
-# Load a pre-trained YOLOv5 model on the application server CPU
-yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  # You can choose from yolov5s, yolov5m, yolov5l, yolov5x
 
 # Rectangle parameters: [x, y, width, height]
 # This is the rectangle box used for determining occupancy on a parking space
-rect = [500, 500, 500, 225]
+winput = int(input("Space Width: "))
+hinput = int(input("Space Height: "))
+rect = [500, 500, winput, hinput]
+
+# Load a pre-trained YOLOv5 model on the application server CPU
+yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  # You can choose from yolov5s, yolov5m, yolov5l, yolov5x
 
 # This is how fast the user can move the box
 move_dist = 50  # Distance to move the rectangle per key press
@@ -154,11 +155,11 @@ while True:
 
     if msg_car != last_car:
         last_car = msg_car
-        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data}")
+        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
     
     if msg_occu != last_occu:
         last_occu = msg_occu
-        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data}")
+        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
 
 
     
@@ -182,7 +183,7 @@ while True:
         reference_frame = None
         confirmed_occupied = False
 
-    # Error logging and such...
-
+# Clean Up Data file and OpenCV
+ssh.exec_command(f"rm -rf {pluto_path}")
 cap.release()
 cv2.destroyAllWindows()
