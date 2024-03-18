@@ -51,7 +51,7 @@ last_occu = ""
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 # Connect to the server
-ssh.connect(hostname='pluto.hood.edu', username='eno1', password='hood10034685')
+ssh.connect(hostname='pluto.hood.edu', username='<ENTER USERNAME>', password='<ENTER PASS>')
 
 # Define data stream path and make sure it is clean
 pluto_path = "~eno1/public_html/parkit/data.txt"
