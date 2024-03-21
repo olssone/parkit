@@ -10,6 +10,6 @@ if (file_exists($filePath) && is_readable($filePath)) {
 
 } else {
     // If the file doesn't exist or isn't readable, return an error message
-    echo 'No data available.';
+    echo 'The Park It! system is offline. Live data is not available.';
 }
 ?>
