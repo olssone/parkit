@@ -57,8 +57,6 @@ ssh.connect(hostname='pluto.hood.edu', username='eno1', password='hood10034685')
 pluto_path = "~eno1/public_html/parkit/data.txt"
 ssh.exec_command(f"rm -rf {pluto_path}")
 
-
-
 # Capture video from the webcam
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
@@ -103,9 +101,10 @@ while True:
             # Car is not in space
             msg_car = "CAR NOT IN SPACE"
 
-
         cv2.putText(frame, msg_car, (rect[0], rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 3)
 
+    # Check if status message has changed
+    # Send data through echo command over SSH 
     if msg_car != last_car:
         last_car = msg_car
         log(f"Status: {msg_car}")

@@ -1,9 +1,31 @@
-# This Python script is the application system component for defining 
-# a parking spot to monitor, detecting if the parking space is occupied, 
-# and wether the object occupying the parking space is a "parkable" vehicle.
+'''
 
-# We use the cv2 "OpenCV-Python" library for detecting space occupancy
-# The YOLOv5 package is used for image detection
+            +----------------------------+
+            | ObjectOccupancyDetector.py |
+            +----------------------------+
+
+
+This Python program contains all application "Park It!" system components:
+
+    1. The Space Occupancy Monitor: A lightweight OpenCV algorithm for detecting
+    differences in frame contours and pixel intensities. The intended use of this
+    algorithm is to determine whether or not a defined parking space is occupied
+    by some sort of object.
+
+    2. The YOLOv5 Object Detector: A powerful Machine Learning algorithm for 
+    the detection of real-world objects. In this case, the system only look 
+    for cars. The intended use of this ML algorithm is to verify that the object
+    occupying the parking space is indeed a vehicle.
+
+    3. Pluto Connection Data Stream: A simple SSH session used for one-way
+    data communication from the Park It! application server to the Pluto web 
+    server. The intended use of this data stream is to relay system status 
+    information so that the end-user can remotely check if the parking space
+    is available.
+
+
+'''
+
 import cv2
 import time
 import paramiko
@@ -16,10 +38,10 @@ hinput = int(input("Space Height: "))
 rect = [500, 500, winput, hinput]
 
 # Load a pre-trained YOLOv5 model on the application server CPU
-yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  # You can choose from yolov5s, yolov5m, yolov5l, yolov5x
+yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  
 
 # This is how fast the user can move the box
-move_dist = 50  # Distance to move the rectangle per key press
+move_dist = 50 
 
 # Reference frame used when checking occupancy
 reference_frame = None
@@ -41,36 +63,55 @@ msg_occu = ""
 # Car in Space Message
 msg_car = ""
 
-# last car msg
+# last car message
 last_car = ""
 
-#last occu msg
+#last occupancy message
 last_occu = ""
+
+# Whether the system shall communicate with Pluto, default is to communicate
+offline = False
 
 # Set up the SSH client
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-# Connect to the server
-ssh.connect(hostname='pluto.hood.edu', username='<ENTER USERNAME>', password='<ENTER PASS>')
 
-# Define data stream path and make sure it is clean
-pluto_path = "~eno1/public_html/parkit/data.txt"
-ssh.exec_command(f"rm -rf {pluto_path}")
+# Connect to the server
+# If there is a failure to authenticate, then run the system in offline mode.
+user = input("Please enter username to connect to Pluto: ")
+passwd = input(f"Please enter password for {user}: ")
+try:
+    ssh.connect(hostname='pluto.hood.edu', username=user, password=passwd)
+except paramiko.AuthenticationException:
+    print("Authentication to Pluto failed!")
+    print("System will not communicate with the Pluto Server at this time.")
+    offline = True
+
+if not offline:
+    # Define data stream path and make sure it is clean
+    pluto_path = "~eno1/public_html/parkit/data.txt"
+    ssh.exec_command(f"rm -rf {pluto_path}")
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
     global occupied_start_time, confirmed_occupied
 
+    # Obtain parking space rectangle location on frame
     x, y, w, h = rect
+
+    # Reference of Interest: The video frame inside the space
     roi = frame[y:y+h, x:x+w]
     if reference_frame is not None:
+        # Get the difference & convert to grey scale
         diff = cv2.absdiff(roi, reference_frame)
         gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
+        
+        # Count the number of pixels above a certain insensity threshold
         _, thresh = cv2.threshold(gray, 25, 255, cv2.THRESH_BINARY)
         count = cv2.countNonZero(thresh)
-
         occupied = count > (w * h * 0.1)  # Threshold, adjust as needed
 
+        # Start timer, this is used later in the main loop
         if occupied:
             if occupied_start_time is None:
                 occupied_start_time = time.time()
@@ -150,20 +191,18 @@ while True:
         msg_occu = "SPACE NOT OCCUPIED"
         msg_car = "CAR NOT IN SPACE"
         confirmed_occupied = False
-    
-    formated_data = f"{msg_occu} - {msg_car}"
 
-    if msg_car != last_car:
-        last_car = msg_car
-        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
-    
-    if msg_occu != last_occu:
-        last_occu = msg_occu
-        stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
+    # Communication with Pluto starts here
+    if not offline:
+        formated_data = f"{msg_occu} - {msg_car}"
 
-
-    
-
+        if msg_car != last_car:
+            last_car = msg_car
+            stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
+        
+        if msg_occu != last_occu:
+            last_occu = msg_occu
+            stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
 
     cv2.imshow('frame', frame)
 
@@ -184,6 +223,9 @@ while True:
         confirmed_occupied = False
 
 # Clean Up Data file and OpenCV
-ssh.exec_command(f"rm -rf {pluto_path}")
+if not offline:
+    ssh.exec_command(f"rm -rf {pluto_path}")
+    ssh.close()
+
 cap.release()
 cv2.destroyAllWindows()
