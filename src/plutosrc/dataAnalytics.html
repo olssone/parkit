@@ -25,32 +25,53 @@
             color: #0066cc;
             text-align: center;
         }
-        #backButton {
-            display: block;
-            margin: 20px; /* Adjust top margin as needed */
-            padding: 10px 20px;
-            background-color: #0066cc;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        /* Add a blue background color to the top navigation */
+        .topnav {
+            background-color: #315781;
+            overflow: hidden;
+          }
+          
+          /* Style the links inside the navigation bar */
+          .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+          }
+          
+          /* Change the color of links on hover */
+          .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+          
+          /* Add a color to the active/current link */
+          .topnav a.active {
+            background-color: hsl(206, 73%, 54%);
+            color: white;
+          }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Park It!</h1>
+        <div class="topnav">
+            <a href="live.html">Live Data</a>
+            <a href="about.html">About</a>
+            <a class="active" href="#dataAnalytics">Data Analytics</a>
+        </div>
         <p>Data Analytics</p>
-        <button id="backButton">Return to Main Page</button>
     </div>
 
-    <script>
+    <!-- <script>
          // Add event listener to about button
          document.getElementById('backButton').addEventListener('click', function() {
             // Redirect to the desired subpage URL
             window.location.href = 'live.html'; // Replace 'subpage.html' with the actual URL of your subpage
         });
-    </script>
+    </script> -->
     
 </body>
 
