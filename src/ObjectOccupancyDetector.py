@@ -33,7 +33,7 @@ from yolov5 import YOLOv5
 
 # Rectangle parameters: [x, y, width, height]
 # This is the rectangle box used for determining occupancy on a parking space
-winput = int(input("Space Width: "))
+winput = int(input("Space Width:  "))
 hinput = int(input("Space Height: "))
 rect = [500, 500, winput, hinput]
 
@@ -76,20 +76,22 @@ offline = False
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
+# Define webserver location for data stream
+pluto_path = "~eno1/public_html/parkit/data.txt"
+
 # Connect to the server
 # If there is a failure to authenticate, then run the system in offline mode.
 user = input("Please enter username to connect to Pluto: ")
 passwd = input(f"Please enter password for {user}: ")
 try:
     ssh.connect(hostname='pluto.hood.edu', username=user, password=passwd)
-except paramiko.AuthenticationException:
+except:
     print("Authentication to Pluto failed!")
     print("System will not communicate with the Pluto Server at this time.")
     offline = True
 
 if not offline:
-    # Define data stream path and make sure it is clean
-    pluto_path = "~eno1/public_html/parkit/data.txt"
+    # Clean data path
     ssh.exec_command(f"rm -rf {pluto_path}")
 
 # check_occupation - Check if live video frame is occupied
@@ -207,6 +209,7 @@ while True:
     cv2.imshow('frame', frame)
 
     # Move the rectangle based on key presses
+    # The box can move at any time while the application is running
     key = cv2.waitKey(1) & 0xFF
     if key == ord('q'):
         break
@@ -222,7 +225,7 @@ while True:
         reference_frame = None
         confirmed_occupied = False
 
-# Clean Up Data file and OpenCV
+# Clean Up Data file and OpenCV on Pluto
 if not offline:
     ssh.exec_command(f"rm -rf {pluto_path}")
     ssh.close()
