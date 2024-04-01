@@ -1,0 +1,20 @@
+<parkit>
+    <space-definition>
+        <space-x>350</space-x>
+        <space-y>250</space-y>
+        <space-width>500</space-width>
+        <space-height>200</space-height>
+        <move-dist>50</move-dist>
+        <occupied-timer>10</occupied-timer>
+    </space-definition>
+    <yolov5-settings>
+        <weights>parkit/yolov5s.pt</weights>
+        <resource>cpu</resource>
+    </yolov5-settings>
+    <data>
+        <camera>0</camera>
+        <system-output-location>parkit-output.txt</system-output-location>
+        <rframe-save-location>PreviousReferenceFrame.npy</rframe-save-location>
+    </data>
+    <status>success</status>
+</parkit>

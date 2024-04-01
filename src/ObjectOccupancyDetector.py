@@ -28,71 +28,62 @@ This Python program contains all application "Park It!" system components:
 
 import cv2
 import time
-import paramiko
+import numpy as np
 from yolov5 import YOLOv5
 
+# Custom libraries
+from Adaptation import get_value_from_tag, update_xml_tag_value, log
+
+# System Configuration File
+sys_config = "src/ParkitConfiguration.xml"
+
+# Read all configuration data by parsing XML file...
+# Space Dimensions & Properties
+rectx     = int(get_value_from_tag(sys_config, "space-x"))
+recty     = int(get_value_from_tag(sys_config, "space-y"))
+rectw     = int(get_value_from_tag(sys_config, "space-width"))
+recth     = int(get_value_from_tag(sys_config, "space-height"))
+move_dist = int(get_value_from_tag(sys_config, "move-dist"))
+log(f"Space Dimensions: x={rectx}, y={recty}, width={rectw}, height={recth}, move-dist={move_dist}")
+
+# YOLOv5 data
+weights  = get_value_from_tag(sys_config, "weights")
+resource = get_value_from_tag(sys_config, "resource")
+log(f"YOLOv5: weights={weights}, device={resource}")
+
+# Timers - used to track how long the space has been occupied
+occupied_timer     = int(get_value_from_tag(sys_config, "occupied-timer"))
+occupied_start_time = None
+
+# Data - input and save locations
+camera = int(get_value_from_tag(sys_config, "camera"))
+prev_saved_rframe = get_value_from_tag(sys_config, "rframe-save-location")
+
+# Variables and objects used in application...
 # Rectangle parameters: [x, y, width, height]
 # This is the rectangle box used for determining occupancy on a parking space
-winput = int(input("Space Width:  "))
-hinput = int(input("Space Height: "))
-rect = [500, 500, winput, hinput]
+rect = [rectx, recty, rectw, recth]
 
 # Load a pre-trained YOLOv5 model on the application server CPU
-yolov5_model = YOLOv5("yolov5/yolov5s.pt", device="cpu")  
-
-# This is how fast the user can move the box
-move_dist = 50 
+yolov5_model = YOLOv5(weights, device=resource)  
 
 # Reference frame used when checking occupancy
-reference_frame = None
-
-# Timer used to detect if the frame has been occupiued for over a period of time
-occupied_start_time = None
-occupied_timer = 10
-
-# Timer used to determine if a car has been in a space for over a period of time
-car_in_space_time = None
-car_in_space_timer = 5
+# Use previously loaded reference frame if the status is marked as failed
+if get_value_from_tag(sys_config, "status") == "failed":
+    reference_frame = np.load(prev_saved_rframe)
+    log(f"Previous reference frame found. Loading {prev_saved_rframe}")
+else:
+    reference_frame = None
+    log("Using new reference frame.")
 
 # Occupancy flag used for coloring the rectangle
 confirmed_occupied = False
 
-# Occupancy Message
+# System Status Messages
 msg_occu = ""
-
-# Car in Space Message
 msg_car = ""
-
-# last car message
 last_car = ""
-
-#last occupancy message
 last_occu = ""
-
-# Whether the system shall communicate with Pluto, default is to communicate
-offline = False
-
-# Set up the SSH client
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-
-# Define webserver location for data stream
-pluto_path = "~eno1/public_html/parkit/data.txt"
-
-# Connect to the server
-# If there is a failure to authenticate, then run the system in offline mode.
-user = input("Please enter username to connect to Pluto: ")
-passwd = input(f"Please enter password for {user}: ")
-try:
-    ssh.connect(hostname='pluto.hood.edu', username=user, password=passwd)
-except:
-    print("Authentication to Pluto failed!")
-    print("System will not communicate with the Pluto Server at this time.")
-    offline = True
-
-if not offline:
-    # Clean data path
-    ssh.exec_command(f"rm -rf {pluto_path}")
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -111,7 +102,7 @@ def check_occupation(frame, rect, reference_frame):
         # Count the number of pixels above a certain insensity threshold
         _, thresh = cv2.threshold(gray, 25, 255, cv2.THRESH_BINARY)
         count = cv2.countNonZero(thresh)
-        occupied = count > (w * h * 0.1)  # Threshold, adjust as needed
+        occupied = count > (w * h * 0.1) 
 
         # Start timer, this is used later in the main loop
         if occupied:
@@ -126,7 +117,7 @@ def check_occupation(frame, rect, reference_frame):
     return False, reference_frame
 
 # Capture video from the webcam
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(camera)
 if not cap.isOpened():
     print("Error: Could not open webcam.")
     exit()
@@ -135,12 +126,15 @@ while True:
     ret, frame = cap.read()
     if not ret:
         print("Error: Could not read frame from webcam.")
+        log("ERROR: Could not read frame from webcam.")
         break
 
     # Update the reference frame
     if reference_frame is None:
         x, y, w, h = rect
         reference_frame = frame[y:y+h, x:x+w].copy()
+        # Save reference frame in case system crashes
+        np.save(prev_saved_rframe, reference_frame)
 
     # Draw the rectangle and determine rectangle color
     rect_color = (0, 0, 255) if confirmed_occupied else (0, 255, 0)
@@ -165,12 +159,7 @@ while True:
             # Filter predictions for 'car' detections
             car_detections = predictions_df[predictions_df['name'] == 'car']
             if len(car_detections) > 0:
-                msg_car = "CAR IN SPACE"
-
-                # Check to see if timer has not been started yet
-                if car_in_space_time is None:
-                    car_in_space_time = time.time()
-                
+                msg_car = "CAR IN SPACE"          
 
                 # Iterate through each car detection to draw a rectangle if the car is in the space
                 for index, row in car_detections.iterrows():
@@ -184,28 +173,28 @@ while True:
             else:
                 # Car is not in space
                 msg_car = "CAR NOT IN SPACE"
-                # Reset timer
-                car_in_space_time = None
 
             cv2.putText(frame, msg_car, (rect[0]+300, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
 
     else:
         msg_occu = "SPACE NOT OCCUPIED"
-        msg_car = "CAR NOT IN SPACE"
+        msg_car  = "CAR NOT IN SPACE"
         confirmed_occupied = False
 
-    # Communication with Pluto starts here
-    if not offline:
-        formated_data = f"{msg_occu} - {msg_car}"
+    formated_data = f"{msg_occu} - {msg_car}"
 
-        if msg_car != last_car:
-            last_car = msg_car
-            stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
-        
-        if msg_occu != last_occu:
-            last_occu = msg_occu
-            stdin, stdout, stderr = ssh.exec_command(f"echo {formated_data} >> {pluto_path}")
-
+    if msg_car != last_car:
+        last_car = msg_car
+        log(f"Status Update: New status='{formated_data}'")
+        # Write after data here
+        print(formated_data)
+    
+    if msg_occu != last_occu:
+        last_occu = msg_occu
+        log(f"Status Update: New status='{formated_data}'")
+        # Write after data here
+        print(formated_data)
+    
     cv2.imshow('frame', frame)
 
     # Move the rectangle based on key presses
@@ -215,20 +204,23 @@ while True:
         break
     elif key == ord('w'):  # Move up
         rect[1] -= move_dist
+        log("Space moved: UP")
     elif key == ord('s'):  # Move down
         rect[1] += move_dist
+        log("Space moved: DOWN")
     elif key == ord('a'):  # Move left
         rect[0] -= move_dist
+        log("Space moved: LEFT")
     elif key == ord('d'):  # Move right
         rect[0] += move_dist
+        log("Space moved: RIGHT")
     elif key == ord('r'):  # Reset reference frame
         reference_frame = None
         confirmed_occupied = False
+        log("Reference frame reset.")
 
-# Clean Up Data file and OpenCV on Pluto
-if not offline:
-    ssh.exec_command(f"rm -rf {pluto_path}")
-    ssh.close()
+    update_xml_tag_value(sys_config, "space-x", str(rect[0]))
+    update_xml_tag_value(sys_config, "space-y", str(rect[1]))
 
 cap.release()
 cv2.destroyAllWindows()
