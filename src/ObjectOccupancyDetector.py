@@ -69,11 +69,12 @@ yolov5_model = YOLOv5(weights, device=resource)
 
 # Reference frame used when checking occupancy
 # Use previously loaded reference frame if the status is marked as failed
+
+reference_frame = None
 if get_value_from_tag(sys_config, "status") == "failed":
     reference_frame = np.load(prev_saved_rframe)
     log(f"Previous reference frame found. Loading {prev_saved_rframe}")
 else:
-    reference_frame = None
     log("Using new reference frame.")
 
 # Occupancy flag used for coloring the rectangle
@@ -84,6 +85,8 @@ msg_occu = ""
 msg_car = ""
 last_car = ""
 last_occu = ""
+
+data_output_fd = get_value_from_tag(sys_config, "system-output-location")
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -116,10 +119,25 @@ def check_occupation(frame, rect, reference_frame):
 
     return False, reference_frame
 
+# Ensure rectangle stays within frame boundaries
+def validate_position(rect, frame_width, frame_height):
+    x, y, w, h = rect
+    if x < 0: x = 0
+    if y < 0: y = 0
+    if x + w > frame_width: x = frame_width - w
+    if y + h > frame_height: y = frame_height - h
+    return [x, y, w, h]
+
+def reset_reference_frame():
+    global reference_frame, confirmed_occupied
+    reference_frame = None
+    confirmed_occupied = False
+
 # Capture video from the webcam
 cap = cv2.VideoCapture(camera)
 if not cap.isOpened():
     print("Error: Could not open webcam.")
+    log("ERROR: Could not open webcam.")
     exit()
 
 while True:
@@ -128,6 +146,9 @@ while True:
         print("Error: Could not read frame from webcam.")
         log("ERROR: Could not read frame from webcam.")
         break
+    
+    frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
     # Update the reference frame
     if reference_frame is None:
@@ -183,17 +204,20 @@ while True:
 
     formated_data = f"{msg_occu} - {msg_car}"
 
+
     if msg_car != last_car:
         last_car = msg_car
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
-        print(formated_data)
+        with open(data_output_fd, "w") as file:
+            file.write(formated_data)
     
     if msg_occu != last_occu:
         last_occu = msg_occu
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
-        print(formated_data)
+        with open(data_output_fd, "w") as file:
+            file.write(formated_data)
     
     cv2.imshow('frame', frame)
 
@@ -201,26 +225,37 @@ while True:
     # The box can move at any time while the application is running
     key = cv2.waitKey(1) & 0xFF
     if key == ord('q'):
+        log("User requested system shutdown. Shutting down...")
         break
     elif key == ord('w'):  # Move up
         rect[1] -= move_dist
-        log("Space moved: UP")
+        rect = validate_position(rect, frame_width, frame_height)
+        reset_reference_frame()
+        log(f"Move Up: Space at X:{rect[0]} Y:{rect[1]}")
     elif key == ord('s'):  # Move down
         rect[1] += move_dist
-        log("Space moved: DOWN")
+        rect = validate_position(rect, frame_width, frame_height)
+        reset_reference_frame()
+        log(f"Move Down: Space at X:{rect[0]} Y:{rect[1]}")
     elif key == ord('a'):  # Move left
         rect[0] -= move_dist
-        log("Space moved: LEFT")
+        rect = validate_position(rect, frame_width, frame_height)
+        reset_reference_frame()
+        log(f"Move Left: Space at X:{rect[0]} Y:{rect[1]}")
     elif key == ord('d'):  # Move right
         rect[0] += move_dist
-        log("Space moved: RIGHT")
+        rect = validate_position(rect, frame_width, frame_height)
+        reset_reference_frame()
+        log(f"Move Right: Space at X:{rect[0]} Y:{rect[1]}")
     elif key == ord('r'):  # Reset reference frame
-        reference_frame = None
-        confirmed_occupied = False
+        reset_reference_frame()
         log("Reference frame reset.")
-
+    elif key == ord('e'):
+        raise ValueError('A planned error event is being requested. This is ok.')
+    
     update_xml_tag_value(sys_config, "space-x", str(rect[0]))
     update_xml_tag_value(sys_config, "space-y", str(rect[1]))
+
 
 cap.release()
 cv2.destroyAllWindows()
