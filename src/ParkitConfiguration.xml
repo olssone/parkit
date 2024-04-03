@@ -1,6 +1,6 @@
 <parkit>
     <space-definition>
-        <space-x>50</space-x>
+        <space-x>700</space-x>
         <space-y>100</space-y>
         <space-width>500</space-width>
         <space-height>200</space-height>
@@ -13,6 +13,7 @@
     </yolov5-settings>
     <data>
         <camera>0</camera>
+        <csv-file-location>src/plutosrc/csv/parkit-data.csv</csv-file-location>
         <system-output-location>src/plutosrc/data.txt</system-output-location>
         <rframe-save-location>PreviousReferenceFrame.npy</rframe-save-location>
     </data>
