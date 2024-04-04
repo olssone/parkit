@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from Adaptation import get_value_from_tag, log  # Assuming you have a function to get values from XML
 
+
 # Path to system configuration file
 sys_config = "src/ParkitConfiguration.xml"
 
@@ -45,5 +46,4 @@ def plot_and_save_graph(data, filename):
     
     # Save the plot as a PNG file
     plt.savefig(filename)
-
     log(f"Graph saved to {filename}")
