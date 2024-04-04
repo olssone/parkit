@@ -38,7 +38,7 @@ def log(message):
     """
     # Get the current timestamp
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    filename = "parkit.log"
+    filename = "src/data/parkit.log"
     
     # Open the file in append mode and write the message
     with open(filename, 'a') as log_file:

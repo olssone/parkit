@@ -1,3 +1,5 @@
+
+from datetime import datetime
 import subprocess
 import time
 import os
@@ -6,10 +8,18 @@ from Adaptation import get_value_from_tag, update_xml_tag_value, log
 
 sys_config = "src/ParkitConfiguration.xml"
 main_script = "src/ObjectOccupancyDetector.py"
+csv_file = get_value_from_tag(sys_config, "csv-file-location")
+csv_columns = get_value_from_tag(sys_config, "csv-column-names")
 output_stream = get_value_from_tag(sys_config, "system-output-location")
 
-logfile_path = "parkit.log"
-os.remove(logfile_path)
+# Create CSV file and give column names
+if not os.path.exists(csv_file):
+    with open(csv_file, 'a') as f:
+        f.write(csv_columns+"\n")
+        
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+with open(csv_file, 'a') as f:
+    f.write(f"########## NEW RUN AT {timestamp} ###########\n")
 
 while True:
     process = subprocess.Popen(['python', main_script])
