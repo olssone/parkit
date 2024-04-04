@@ -26,13 +26,17 @@ This Python program contains all application "Park It!" system components:
 
 '''
 
+import csv
+from datetime import datetime
 import cv2
 import time
 import numpy as np
 from yolov5 import YOLOv5
 
 # Custom libraries
-from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file
+from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file, append_text_to_file
+
+from CSVConvertGraphs import plot_and_save_graph, read_csv
 
 # System Configuration File
 sys_config = "src/ParkitConfiguration.xml"
@@ -87,6 +91,7 @@ last_car = ""
 last_occu = ""
 
 data_output_fd = get_value_from_tag(sys_config, "system-output-location")
+csv_file_location = get_value_from_tag(sys_config, "csv-file-location")
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -204,22 +209,30 @@ while True:
 
     formated_data = f"{msg_occu} - {msg_car}"
 
-
     if msg_car != last_car:
         last_car = msg_car
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
         write_text_to_file(data_output_fd, formated_data)
-
-        # example for csv
-        #append_text_to_file(csv-file, csv-data)
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        csv_data = f"{msg_occu},{msg_car},{timestamp},{rectx},{recty},{rectw},{recth}"
+        append_text_to_file(csv_file_location, csv_data)
+        data = read_csv(csv_file_location)
+        graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
+        plot_and_save_graph(data, graph_file_location)
     
     if msg_occu != last_occu:
         last_occu = msg_occu
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
         write_text_to_file(data_output_fd, formated_data)
-    
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        csv_data = f"{msg_occu},{msg_car},{timestamp},{rectx},{recty},{rectw},{recth}"
+        append_text_to_file(csv_file_location, csv_data)
+        data = read_csv(csv_file_location)
+        graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
+        plot_and_save_graph(data, graph_file_location)
+        
     cv2.imshow('frame', frame)
 
     # Move the rectangle based on key presses

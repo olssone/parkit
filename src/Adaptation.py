@@ -105,7 +105,6 @@ def append_text_to_file(file_path, text):
         # Open the file in append mode and write the text to a new line
         with open(file_path, 'a') as file:
             file.write(f"\n{text}")
-        print("Text appended successfully.")
     else:
         print(f"Note: The file '{file_path}' does not exist. It will be created.")
         # Open the file in write mode, which will create the file if it doesn't exist

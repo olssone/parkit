@@ -29,13 +29,10 @@ elif 'src' not in all_items:
     exit()
 
 # Create CSV file and give column names
+os.remove(csv_file)
 
 if not os.path.exists(csv_file):
-    write_text_to_file(csv_file,csv_columns)
-        
-timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-new_run = f"########## NEW RUN AT {timestamp} ###########"
-append_text_to_file(csv_file, new_run)
+    append_text_to_file(csv_file,csv_columns)
 
 try:
     while True:

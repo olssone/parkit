@@ -1,6 +1,6 @@
 <parkit>
     <space-definition>
-        <space-x>350</space-x>
+        <space-x>650</space-x>
         <space-y>120</space-y>
         
         <space-width>500</space-width>
@@ -16,7 +16,7 @@
     <data>
         <camera>0</camera>
         <log-file-location>src/data/parkit.log</log-file-location>
-        <data-analytics-graph>src/plutosrc/graphs/parkit-data-analytics-graph</data-analytics-graph>
+        <data-analytics-graph>src/plutosrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
         <csv-file-location>src/plutosrc/csv/parkit-data.csv</csv-file-location>
         <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
         <system-output-location>src/plutosrc/data.txt</system-output-location>
