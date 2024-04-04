@@ -1,3 +1,4 @@
+import os
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
@@ -77,3 +78,37 @@ def update_xml_tag_value(file_path, tag, new_value):
     except Exception as e:
         print(f"An error occurred: {e}")
         return False
+
+def write_text_to_file(file_path, text):
+    # Check if the provided file path is valid
+    if os.path.isdir(file_path):
+        print(f"Error: The path '{file_path}' is a directory, not a file.")
+        log(f"Write error: {file_path} does not exist.")
+        return
+    if os.path.isfile(file_path):
+        # Open the file in append mode and write the text to a new line
+        with open(file_path, 'w') as file:
+            file.write(f"{text}")
+    else:
+        print(f"Note: The file '{file_path}' does not exist. It will be created.")
+        # Open the file in write mode, which will create the file if it doesn't exist
+        with open(file_path, 'w') as file:
+            file.write(text)
+        print("File created and text written.")
+
+def append_text_to_file(file_path, text):
+    # Check if the provided file path is valid
+    if os.path.isdir(file_path):
+        print(f"Error: The path '{file_path}' is a directory, not a file.")
+        return
+    if os.path.isfile(file_path):
+        # Open the file in append mode and write the text to a new line
+        with open(file_path, 'a') as file:
+            file.write(f"\n{text}")
+        print("Text appended successfully.")
+    else:
+        print(f"Note: The file '{file_path}' does not exist. It will be created.")
+        # Open the file in write mode, which will create the file if it doesn't exist
+        with open(file_path, 'w') as file:
+            file.write(text)
+        print("File created and text written.")

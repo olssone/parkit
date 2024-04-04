@@ -1,9 +1,11 @@
 <parkit>
     <space-definition>
-        <space-x>250</space-x>
-        <space-y>200</space-y>
+        <space-x>330</space-x>
+        <space-y>150</space-y>
+        
         <space-width>500</space-width>
         <space-height>200</space-height>
+        
         <move-dist>50</move-dist>
         <occupied-timer>10</occupied-timer>
     </space-definition>

@@ -32,7 +32,7 @@ import numpy as np
 from yolov5 import YOLOv5
 
 # Custom libraries
-from Adaptation import get_value_from_tag, update_xml_tag_value, log
+from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file
 
 # System Configuration File
 sys_config = "src/ParkitConfiguration.xml"
@@ -209,15 +209,16 @@ while True:
         last_car = msg_car
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
-        with open(data_output_fd, "w") as file:
-            file.write(formated_data)
+        write_text_to_file(data_output_fd, formated_data)
+
+        # example for csv
+        #append_text_to_file(csv-file, csv-data)
     
     if msg_occu != last_occu:
         last_occu = msg_occu
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
-        with open(data_output_fd, "w") as file:
-            file.write(formated_data)
+        write_text_to_file(data_output_fd, formated_data)
     
     cv2.imshow('frame', frame)
 
@@ -249,8 +250,9 @@ while True:
         log(f"Move Right: Space at X:{rect[0]} Y:{rect[1]}")
     elif key == ord('r'):  # Reset reference frame
         reset_reference_frame()
-        log("Reference frame reset.")
+        log("User requests reference frame reset.")
     elif key == ord('e'):
+        log("User throws an error. This is normal.")
         raise ValueError('A planned error event is being requested. This is ok.')
     
     update_xml_tag_value(sys_config, "space-x", str(rect[0]))
