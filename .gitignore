@@ -2,4 +2,5 @@ opencv-env/*
 src/__pycache__
 src/data/*
 src/plutosrc/csv/*
+src/plutosrc/png
 .DS_Store
