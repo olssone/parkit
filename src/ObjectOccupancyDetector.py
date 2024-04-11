@@ -26,13 +26,17 @@ This Python program contains all application "Park It!" system components:
 
 '''
 
+import csv
+from datetime import datetime
 import cv2
 import time
 import numpy as np
 from yolov5 import YOLOv5
 
 # Custom libraries
-from Adaptation import get_value_from_tag, update_xml_tag_value, log
+from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file, append_text_to_file
+
+from CSVConvertGraphs import plot_and_save_graph, read_csv
 
 # System Configuration File
 sys_config = "src/ParkitConfiguration.xml"
@@ -87,6 +91,9 @@ last_car = ""
 last_occu = ""
 
 data_output_fd = get_value_from_tag(sys_config, "system-output-location")
+csv_file_location = get_value_from_tag(sys_config, "csv-file-location")
+
+csv_write_timer = time.time()
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -204,21 +211,30 @@ while True:
 
     formated_data = f"{msg_occu} - {msg_car}"
 
-
     if msg_car != last_car:
         last_car = msg_car
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
-        with open(data_output_fd, "w") as file:
-            file.write(formated_data)
+        write_text_to_file(data_output_fd, formated_data)
     
     if msg_occu != last_occu:
         last_occu = msg_occu
         log(f"Status Update: New status='{formated_data}'")
         # Write after data here
-        with open(data_output_fd, "w") as file:
-            file.write(formated_data)
-    
+        write_text_to_file(data_output_fd, formated_data)
+
+    current_time = time.time()
+    elapsed_time = current_time - csv_write_timer
+    if elapsed_time > 3:
+        csv_write_timer = time.time()
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        csv_data = f"{msg_occu},{msg_car},{timestamp},{rectx},{recty},{rectw},{recth}"
+        append_text_to_file(csv_file_location, csv_data)
+        data = read_csv(csv_file_location)
+        graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
+        plot_and_save_graph(data, graph_file_location)
+
+
     cv2.imshow('frame', frame)
 
     # Move the rectangle based on key presses
@@ -249,8 +265,9 @@ while True:
         log(f"Move Right: Space at X:{rect[0]} Y:{rect[1]}")
     elif key == ord('r'):  # Reset reference frame
         reset_reference_frame()
-        log("Reference frame reset.")
+        log("User requests reference frame reset.")
     elif key == ord('e'):
+        log("User throws an error. This is normal.")
         raise ValueError('A planned error event is being requested. This is ok.')
     
     update_xml_tag_value(sys_config, "space-x", str(rect[0]))

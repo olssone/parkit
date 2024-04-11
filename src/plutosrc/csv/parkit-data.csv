@@ -1,6 +1,1 @@
-status_occupied,status_car,time,rectangle_x,rectangle_y,rectangle_width,rectangle_height
-f,f,2024-04-01 08:00:00,10,20,30,40
-t,t,2024-04-01 08:15:00,20,30,40,50
-f,t,2024-04-01 08:30:00,30,40,50,60
-f,f,2024-04-01 08:45:00,40,50,60,70
-t,t,2024-04-01 09:00:00,50,60,70,80
+

@@ -1,10 +1,6 @@
 # Park It!
 Parking Space Monitoring System for Senior Project. Spring 2024.
 
-## eli is working on:
-```bash
-workingExamples/ObjectOccupancyDetection.py
-```
 ## To run:
 Enter all the commands in order, one at a time!
 ### Install Repo Dependencies
@@ -23,6 +19,6 @@ pip install -r requirements.txt
 ```
 ### Run the actual Parking Space Monitor Script
 ```bash
-cd parkit/workingExamples/
-python3 occupany+objectdetect-v2-working.py
+cd parkit
+python3 ParkitWatchDog.py
 ```

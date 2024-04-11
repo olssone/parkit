@@ -1,0 +1,324 @@
+[2024-04-03 21:00:23] System failed. Restarting...
+[2024-04-03 21:26:26] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:26:26] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:26:41] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:26:41] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:26:41] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:26:46] get_value_from_tag: found space-x=250
+[2024-04-03 21:26:46] get_value_from_tag: found space-y=200
+[2024-04-03 21:26:46] get_value_from_tag: found space-width=500
+[2024-04-03 21:26:46] get_value_from_tag: found space-height=200
+[2024-04-03 21:26:46] get_value_from_tag: found move-dist=50
+[2024-04-03 21:26:46] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:26:46] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:26:46] get_value_from_tag: found resource=cpu
+[2024-04-03 21:26:46] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:26:46] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:26:46] get_value_from_tag: found camera=0
+[2024-04-03 21:26:46] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:26:47] get_value_from_tag: found status=failed
+[2024-04-03 21:26:47] Previous reference frame found. Loading PreviousReferenceFrame.npy
+[2024-04-03 21:26:47] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:26:53] User requested system shutdown. Shutting down...
+[2024-04-03 21:26:54] System exiting safely...
+[2024-04-03 21:27:55] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:27:55] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:27:55] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:28:01] get_value_from_tag: found space-x=250
+[2024-04-03 21:28:01] get_value_from_tag: found space-y=200
+[2024-04-03 21:28:01] get_value_from_tag: found space-width=500
+[2024-04-03 21:28:01] get_value_from_tag: found space-height=200
+[2024-04-03 21:28:01] get_value_from_tag: found move-dist=50
+[2024-04-03 21:28:01] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:28:01] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:28:01] get_value_from_tag: found resource=cpu
+[2024-04-03 21:28:01] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:28:01] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:28:01] get_value_from_tag: found camera=0
+[2024-04-03 21:28:01] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:28:01] get_value_from_tag: found status=success
+[2024-04-03 21:28:01] Using new reference frame.
+[2024-04-03 21:28:01] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:28:02] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:28:02] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:28:02] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:28:02] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:28:04] User requested system shutdown. Shutting down...
+[2024-04-03 21:28:05] System exiting safely...
+[2024-04-03 21:28:51] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:28:51] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:28:51] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:28:56] get_value_from_tag: found space-x=250
+[2024-04-03 21:28:56] get_value_from_tag: found space-y=200
+[2024-04-03 21:28:56] get_value_from_tag: found space-width=500
+[2024-04-03 21:28:56] get_value_from_tag: found space-height=200
+[2024-04-03 21:28:56] get_value_from_tag: found move-dist=50
+[2024-04-03 21:28:56] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:28:56] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:28:56] get_value_from_tag: found resource=cpu
+[2024-04-03 21:28:56] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:28:56] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:28:56] get_value_from_tag: found camera=0
+[2024-04-03 21:28:56] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:28:56] get_value_from_tag: found status=success
+[2024-04-03 21:28:56] Using new reference frame.
+[2024-04-03 21:28:56] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:29:08] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:29:08] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:29:08] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:29:13] get_value_from_tag: found space-x=250
+[2024-04-03 21:29:13] get_value_from_tag: found space-y=200
+[2024-04-03 21:29:13] get_value_from_tag: found space-width=500
+[2024-04-03 21:29:13] get_value_from_tag: found space-height=200
+[2024-04-03 21:29:13] get_value_from_tag: found move-dist=50
+[2024-04-03 21:29:13] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:29:13] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:29:13] get_value_from_tag: found resource=cpu
+[2024-04-03 21:29:13] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:29:13] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:29:13] get_value_from_tag: found camera=0
+[2024-04-03 21:29:13] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:29:14] get_value_from_tag: found status=success
+[2024-04-03 21:29:14] Using new reference frame.
+[2024-04-03 21:29:14] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:29:15] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:29:15] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:29:15] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:29:15] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:29:25] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:29:25] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:29:42] User requested system shutdown. Shutting down...
+[2024-04-03 21:29:43] System exiting safely...
+[2024-04-03 21:32:12] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:32:12] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:32:12] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:32:19] get_value_from_tag: found space-x=250
+[2024-04-03 21:32:19] get_value_from_tag: found space-y=200
+[2024-04-03 21:32:19] get_value_from_tag: found space-width=500
+[2024-04-03 21:32:19] get_value_from_tag: found space-height=200
+[2024-04-03 21:32:19] get_value_from_tag: found move-dist=50
+[2024-04-03 21:32:19] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:32:19] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:32:19] get_value_from_tag: found resource=cpu
+[2024-04-03 21:32:19] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:32:19] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:32:19] get_value_from_tag: found camera=0
+[2024-04-03 21:32:19] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:32:20] get_value_from_tag: found status=success
+[2024-04-03 21:32:20] Using new reference frame.
+[2024-04-03 21:32:20] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:32:21] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:32:21] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:32:21] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:32:21] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:32:31] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:32:31] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:32:32] User requested system shutdown. Shutting down...
+[2024-04-03 21:32:33] System exiting safely...
+[2024-04-03 21:33:21] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:33:21] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:33:21] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:34:00] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:34:00] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:34:00] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:34:39] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:34:39] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:34:39] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:34:52] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:34:52] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:34:52] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:34:57] get_value_from_tag: found space-x=250
+[2024-04-03 21:34:57] get_value_from_tag: found space-y=200
+[2024-04-03 21:34:57] get_value_from_tag: found space-width=500
+[2024-04-03 21:34:57] get_value_from_tag: found space-height=200
+[2024-04-03 21:34:57] get_value_from_tag: found move-dist=50
+[2024-04-03 21:34:57] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:34:57] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:34:57] get_value_from_tag: found resource=cpu
+[2024-04-03 21:34:57] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:34:57] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:34:57] get_value_from_tag: found camera=0
+[2024-04-03 21:34:57] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:34:58] get_value_from_tag: found status=success
+[2024-04-03 21:34:58] Using new reference frame.
+[2024-04-03 21:34:58] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:34:59] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:34:59] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:34:59] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:34:59] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:35:09] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:35:09] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:35:12] User requested system shutdown. Shutting down...
+[2024-04-03 21:35:13] System exiting safely...
+[2024-04-03 21:35:29] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:35:29] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:35:29] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:35:34] get_value_from_tag: found space-x=250
+[2024-04-03 21:35:34] get_value_from_tag: found space-y=200
+[2024-04-03 21:35:34] get_value_from_tag: found space-width=500
+[2024-04-03 21:35:34] get_value_from_tag: found space-height=200
+[2024-04-03 21:35:34] get_value_from_tag: found move-dist=50
+[2024-04-03 21:35:34] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:35:34] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:35:34] get_value_from_tag: found resource=cpu
+[2024-04-03 21:35:34] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:35:34] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:35:34] get_value_from_tag: found camera=0
+[2024-04-03 21:35:34] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:35:35] get_value_from_tag: found status=success
+[2024-04-03 21:35:35] Using new reference frame.
+[2024-04-03 21:35:35] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:35:36] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:35:36] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:35:36] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:35:36] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:35:46] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:35:46] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:36:05] User requested system shutdown. Shutting down...
+[2024-04-03 21:36:06] System exiting safely...
+[2024-04-03 21:37:05] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:37:05] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:37:05] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:37:10] get_value_from_tag: found space-x=250
+[2024-04-03 21:37:10] get_value_from_tag: found space-y=200
+[2024-04-03 21:37:10] get_value_from_tag: found space-width=500
+[2024-04-03 21:37:10] get_value_from_tag: found space-height=200
+[2024-04-03 21:37:10] get_value_from_tag: found move-dist=50
+[2024-04-03 21:37:10] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:37:10] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:37:10] get_value_from_tag: found resource=cpu
+[2024-04-03 21:37:10] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:37:10] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:37:10] get_value_from_tag: found camera=0
+[2024-04-03 21:37:10] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:37:11] get_value_from_tag: found status=success
+[2024-04-03 21:37:11] Using new reference frame.
+[2024-04-03 21:37:11] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:37:12] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:37:12] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:37:12] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:37:12] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:37:20] User requested system shutdown. Shutting down...
+[2024-04-03 21:37:21] System exiting safely...
+[2024-04-03 21:37:24] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:37:24] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:37:24] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:37:29] get_value_from_tag: found space-x=250
+[2024-04-03 21:37:29] get_value_from_tag: found space-y=200
+[2024-04-03 21:37:29] get_value_from_tag: found space-width=500
+[2024-04-03 21:37:29] get_value_from_tag: found space-height=200
+[2024-04-03 21:37:29] get_value_from_tag: found move-dist=50
+[2024-04-03 21:37:29] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:37:29] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:37:29] get_value_from_tag: found resource=cpu
+[2024-04-03 21:37:29] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:37:29] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:37:29] get_value_from_tag: found camera=0
+[2024-04-03 21:37:29] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:37:30] get_value_from_tag: found status=success
+[2024-04-03 21:37:30] Using new reference frame.
+[2024-04-03 21:37:30] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:37:31] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:37:31] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:37:31] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:37:31] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:37:34] User requested system shutdown. Shutting down...
+[2024-04-03 21:37:35] System exiting safely...
+[2024-04-03 21:38:27] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:38:27] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 21:38:27] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:38:33] get_value_from_tag: found space-x=250
+[2024-04-03 21:38:33] get_value_from_tag: found space-y=200
+[2024-04-03 21:38:33] get_value_from_tag: found space-width=500
+[2024-04-03 21:38:33] get_value_from_tag: found space-height=200
+[2024-04-03 21:38:33] get_value_from_tag: found move-dist=50
+[2024-04-03 21:38:33] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 21:38:33] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 21:38:33] get_value_from_tag: found resource=cpu
+[2024-04-03 21:38:33] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 21:38:33] get_value_from_tag: found occupied-timer=10
+[2024-04-03 21:38:33] get_value_from_tag: found camera=0
+[2024-04-03 21:38:33] get_value_from_tag: found rframe-save-location=PreviousReferenceFrame.npy
+[2024-04-03 21:38:33] get_value_from_tag: found status=success
+[2024-04-03 21:38:33] Using new reference frame.
+[2024-04-03 21:38:33] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 21:38:34] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:38:34] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:38:34] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:38:34] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:38:44] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 21:38:44] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 21:38:58] User requested system shutdown. Shutting down...
+[2024-04-03 21:38:59] System exiting safely...
+[2024-04-03 22:02:06] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 22:02:06] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 22:02:06] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 22:02:14] get_value_from_tag: found space-x=250
+[2024-04-03 22:02:14] get_value_from_tag: found space-y=200
+[2024-04-03 22:02:14] get_value_from_tag: found space-width=500
+[2024-04-03 22:02:14] get_value_from_tag: found space-height=200
+[2024-04-03 22:02:14] get_value_from_tag: found move-dist=50
+[2024-04-03 22:02:14] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 22:02:14] get_value_from_tag: found weights=parkit/yolov5s.pt
+[2024-04-03 22:02:14] get_value_from_tag: found resource=cpu
+[2024-04-03 22:02:14] YOLOv5: weights=parkit/yolov5s.pt, device=cpu
+[2024-04-03 22:02:14] get_value_from_tag: found occupied-timer=10
+[2024-04-03 22:02:14] get_value_from_tag: found camera=0
+[2024-04-03 22:02:14] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-03 22:02:16] get_value_from_tag: found status=success
+[2024-04-03 22:02:16] Using new reference frame.
+[2024-04-03 22:02:16] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 22:02:18] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:02:18] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 22:02:18] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:02:18] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 22:02:28] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:02:28] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 22:02:32] User requested system shutdown. Shutting down...
+[2024-04-03 22:02:34] System exiting safely...
+[2024-04-03 22:44:20] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 22:44:20] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 22:44:20] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 22:44:32] get_value_from_tag: found space-x=250
+[2024-04-03 22:44:32] get_value_from_tag: found space-y=200
+[2024-04-03 22:44:32] get_value_from_tag: found space-width=500
+[2024-04-03 22:44:32] get_value_from_tag: found space-height=200
+[2024-04-03 22:44:32] get_value_from_tag: found move-dist=50
+[2024-04-03 22:44:32] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 22:44:32] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-03 22:44:32] get_value_from_tag: found resource=cpu
+[2024-04-03 22:44:32] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-03 22:44:32] get_value_from_tag: found occupied-timer=10
+[2024-04-03 22:44:32] get_value_from_tag: found camera=0
+[2024-04-03 22:44:32] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-03 22:44:33] get_value_from_tag: found status=success
+[2024-04-03 22:44:33] Using new reference frame.
+[2024-04-03 22:44:33] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 22:44:34] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:44:34] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:44:45] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:45:19] User requested system shutdown. Shutting down...
+[2024-04-03 22:45:20] System exiting safely...
+[2024-04-03 22:45:34] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-03 22:45:34] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-03 22:45:34] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 22:45:42] get_value_from_tag: found space-x=250
+[2024-04-03 22:45:42] get_value_from_tag: found space-y=200
+[2024-04-03 22:45:42] get_value_from_tag: found space-width=500
+[2024-04-03 22:45:42] get_value_from_tag: found space-height=200
+[2024-04-03 22:45:42] get_value_from_tag: found move-dist=50
+[2024-04-03 22:45:42] Space Dimensions: x=250, y=200, width=500, height=200, move-dist=50
+[2024-04-03 22:45:42] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-03 22:45:42] get_value_from_tag: found resource=cpu
+[2024-04-03 22:45:42] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-03 22:45:42] get_value_from_tag: found occupied-timer=10
+[2024-04-03 22:45:42] get_value_from_tag: found camera=0
+[2024-04-03 22:45:42] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-03 22:45:42] get_value_from_tag: found status=success
+[2024-04-03 22:45:42] Using new reference frame.
+[2024-04-03 22:45:42] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-03 22:45:43] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:45:43] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:45:54] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-03 22:46:11] User requested system shutdown. Shutting down...
+[2024-04-03 22:46:12] System exiting safely...
