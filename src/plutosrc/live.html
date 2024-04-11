@@ -84,9 +84,7 @@
             .catch(error => console.error('Error fetching data: ', error));
         }
 
-        setInterval(function() {
-            location.reload();
-        }, 3000); // 1000 milliseconds = 1 second
+        setInterval(fetchData, 1000);
 
     </script>
 </body>

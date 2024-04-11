@@ -54,7 +54,9 @@
           }
     </style>
     <script>
-        setInterval(fetchData, 1000);
+        setInterval(function() {
+            location.reload();
+        }, 3000); // 1000 milliseconds = 1 second
     </script>
 </head>
 <body>

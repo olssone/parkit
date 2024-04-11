@@ -34,9 +34,11 @@ def plot_and_save_graph(data, filename):
     
     # Create the plot
     plt.figure(figsize=(13, 6))
+    
     # Plot each point, color it based on car presence
     for i in range(len(times)-1):
         plt.plot(times[i:i+2], car_presence[i:i+2], color='red' if car_presence[i] == 1 else 'green')
+    
     plt.xlabel('Time')
     plt.ylabel('Space Occupancy')
     plt.title('Parking Space Occupancy over Time')
@@ -46,7 +48,11 @@ def plot_and_save_graph(data, filename):
     # Create custom legend
     legend_elements = [Line2D([0], [0], color='green', lw=4, label='Space Vacant'),
                        Line2D([0], [0], color='red', lw=4, label='Space Occupied')]
-    plt.legend(handles=legend_elements, loc='upper left')
+    
+    plt.legend(handles=legend_elements, loc='upper left', bbox_to_anchor=(1, 1))
+ 
+    # Adjust layout to not cut off legend since it needs to be outside of the graph.
+    plt.tight_layout()  
 
     # Save the plot as a PNG file
     plt.savefig(filename)

@@ -322,3 +322,954 @@
 [2024-04-03 22:45:54] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
 [2024-04-03 22:46:11] User requested system shutdown. Shutting down...
 [2024-04-03 22:46:12] System exiting safely...
+[2024-04-11 11:35:47] Watch dog started at 2024-04-11 11:35:47
+[2024-04-11 11:35:47] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:35:47] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 11:35:47] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 11:35:47] System started at 2024-04-11 11:35:47
+[2024-04-11 11:35:58] get_value_from_tag: found space-x=650
+[2024-04-11 11:35:58] get_value_from_tag: found space-y=120
+[2024-04-11 11:35:58] get_value_from_tag: found space-width=500
+[2024-04-11 11:35:58] get_value_from_tag: found space-height=200
+[2024-04-11 11:35:58] get_value_from_tag: found move-dist=50
+[2024-04-11 11:35:58] Space Dimensions: x=650, y=120, width=500, height=200, move-dist=50
+[2024-04-11 11:35:58] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 11:35:58] get_value_from_tag: found resource=cpu
+[2024-04-11 11:35:58] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 11:35:58] get_value_from_tag: found occupied-timer=10
+[2024-04-11 11:35:58] get_value_from_tag: found camera=0
+[2024-04-11 11:35:58] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 11:35:59] get_value_from_tag: found status=success
+[2024-04-11 11:35:59] Using new reference frame.
+[2024-04-11 11:35:59] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 11:35:59] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:36:01] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:36:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:36:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:01] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:36:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:36:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:11] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:36:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:36:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:12] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:25] User requests reference frame reset.
+[2024-04-11 11:36:25] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:36:25] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:36:25] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:25] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:26] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:27] User requests reference frame reset.
+[2024-04-11 11:36:29] Move Down: Space at X:650 Y:170
+[2024-04-11 11:36:30] Move Down: Space at X:650 Y:220
+[2024-04-11 11:36:30] Move Down: Space at X:650 Y:270
+[2024-04-11 11:37:03] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:37:03] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:03] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:03] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:03] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:37:03] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:03] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:03] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:05] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:37:05] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:05] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:05] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:05] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:37:05] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:05] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:05] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:10] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:37:10] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:10] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:10] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:11] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:37:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:13] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:37:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:13] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:13] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:37:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:37:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:14] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:37:21] User requested system shutdown. Shutting down...
+[2024-04-11 11:37:22] System exiting safely...
+[2024-04-11 11:51:33] Watch dog started at 2024-04-11 11:51:33
+[2024-04-11 11:51:33] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:51:33] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 11:51:33] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 11:51:33] System started at 2024-04-11 11:51:33
+[2024-04-11 11:51:45] get_value_from_tag: found space-x=650
+[2024-04-11 11:51:45] get_value_from_tag: found space-y=270
+[2024-04-11 11:51:45] get_value_from_tag: found space-width=500
+[2024-04-11 11:51:45] get_value_from_tag: found space-height=200
+[2024-04-11 11:51:45] get_value_from_tag: found move-dist=50
+[2024-04-11 11:51:45] Space Dimensions: x=650, y=270, width=500, height=200, move-dist=50
+[2024-04-11 11:51:45] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 11:51:45] get_value_from_tag: found resource=cpu
+[2024-04-11 11:51:45] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 11:51:45] get_value_from_tag: found occupied-timer=10
+[2024-04-11 11:51:45] get_value_from_tag: found camera=0
+[2024-04-11 11:51:45] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 11:51:46] get_value_from_tag: found status=success
+[2024-04-11 11:51:46] Using new reference frame.
+[2024-04-11 11:51:46] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 11:51:46] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:51:48] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:51:48] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:51:48] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:51:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:51:48] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:51:48] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:51:48] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:51:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:51:58] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:51:58] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:51:58] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:51:59] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:10] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:52:10] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:10] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:52:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:12] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:52:12] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:12] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:12] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:13] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:13] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:13] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:52:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:13] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:13] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:14] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:14] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:52:14] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:14] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:15] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:34] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:34] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:34] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:34] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:34] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 11:52:34] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:34] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:35] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:35] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:35] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:35] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:35] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:38] User requests reference frame reset.
+[2024-04-11 11:52:38] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 11:52:38] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 11:52:38] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:38] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 11:52:40] User requested system shutdown. Shutting down...
+[2024-04-11 11:52:41] System exiting safely...
+[2024-04-11 12:00:53] Watch dog started at 2024-04-11 12:00:53
+[2024-04-11 12:00:53] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:00:53] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 12:00:53] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 12:00:53] System started at 2024-04-11 12:00:53
+[2024-04-11 12:01:05] get_value_from_tag: found space-x=750
+[2024-04-11 12:01:05] get_value_from_tag: found space-y=370
+[2024-04-11 12:01:05] get_value_from_tag: found space-width=500
+[2024-04-11 12:01:05] get_value_from_tag: found space-height=200
+[2024-04-11 12:01:05] get_value_from_tag: found move-dist=50
+[2024-04-11 12:01:05] Space Dimensions: x=750, y=370, width=500, height=200, move-dist=50
+[2024-04-11 12:01:05] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 12:01:05] get_value_from_tag: found resource=cpu
+[2024-04-11 12:01:05] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 12:01:05] get_value_from_tag: found occupied-timer=10
+[2024-04-11 12:01:05] get_value_from_tag: found camera=0
+[2024-04-11 12:01:05] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 12:01:05] get_value_from_tag: found status=success
+[2024-04-11 12:01:05] Using new reference frame.
+[2024-04-11 12:01:05] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 12:01:05] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:07] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:01:07] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:01:08] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:08] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:08] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:14] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:14] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:15] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:17] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:01:17] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:17] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:18] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:20] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:20] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:21] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:23] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:23] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:24] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:26] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:26] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:27] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:29] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:29] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:30] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:33] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:33] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:33] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:36] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:36] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:36] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:39] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:39] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:39] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:42] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:42] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:42] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:45] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:45] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:45] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:48] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:01:48] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:01:49] User requested system shutdown. Shutting down...
+[2024-04-11 12:01:50] System exiting safely...
+[2024-04-11 12:02:53] Watch dog started at 2024-04-11 12:02:53
+[2024-04-11 12:02:53] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:02:53] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 12:02:53] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 12:02:53] System started at 2024-04-11 12:02:53
+[2024-04-11 12:03:02] get_value_from_tag: found space-x=750
+[2024-04-11 12:03:02] get_value_from_tag: found space-y=370
+[2024-04-11 12:03:02] get_value_from_tag: found space-width=500
+[2024-04-11 12:03:02] get_value_from_tag: found space-height=200
+[2024-04-11 12:03:02] get_value_from_tag: found move-dist=50
+[2024-04-11 12:03:02] Space Dimensions: x=750, y=370, width=500, height=200, move-dist=50
+[2024-04-11 12:03:02] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 12:03:02] get_value_from_tag: found resource=cpu
+[2024-04-11 12:03:02] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 12:03:02] get_value_from_tag: found occupied-timer=10
+[2024-04-11 12:03:02] get_value_from_tag: found camera=0
+[2024-04-11 12:03:02] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 12:03:03] get_value_from_tag: found status=success
+[2024-04-11 12:03:03] Using new reference frame.
+[2024-04-11 12:03:03] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 12:03:03] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:04] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:03:04] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:03:06] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:06] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:06] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:09] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:09] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:09] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:12] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:12] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:12] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:14] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:03:15] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:15] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:15] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:18] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:18] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:18] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:21] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:21] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:21] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:24] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:24] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:24] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:26] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 12:03:27] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:27] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:27] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:30] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:30] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:30] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:33] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:33] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:34] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:36] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:36] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:37] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:39] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:39] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:40] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:42] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 12:03:43] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:43] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:43] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:46] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:46] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:46] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:49] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:49] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:49] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:52] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:52] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:52] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:55] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:55] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:55] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:58] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:03:58] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:03:58] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:04:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:04] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:04:04] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:04] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:07] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 12:04:07] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:07] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 12:04:09] User requested system shutdown. Shutting down...
+[2024-04-11 12:04:10] System exiting safely...
+[2024-04-11 14:11:32] Watch dog started at 2024-04-11 14:11:32
+[2024-04-11 14:11:32] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:11:32] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 14:11:32] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:11:32] System started at 2024-04-11 14:11:32
+[2024-04-11 14:11:45] get_value_from_tag: found space-x=750
+[2024-04-11 14:11:45] get_value_from_tag: found space-y=370
+[2024-04-11 14:11:45] get_value_from_tag: found space-width=500
+[2024-04-11 14:11:45] get_value_from_tag: found space-height=200
+[2024-04-11 14:11:45] get_value_from_tag: found move-dist=50
+[2024-04-11 14:11:45] Space Dimensions: x=750, y=370, width=500, height=200, move-dist=50
+[2024-04-11 14:11:45] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 14:11:45] get_value_from_tag: found resource=cpu
+[2024-04-11 14:11:45] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 14:11:45] get_value_from_tag: found occupied-timer=10
+[2024-04-11 14:11:45] get_value_from_tag: found camera=0
+[2024-04-11 14:11:45] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 14:11:46] get_value_from_tag: found status=success
+[2024-04-11 14:11:46] Using new reference frame.
+[2024-04-11 14:11:46] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:11:46] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:11:47] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:11:47] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:11:49] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:11:49] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:49] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:52] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:11:52] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:52] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:55] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:11:55] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:55] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:58] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:11:58] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:11:58] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:11:58] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:04] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:04] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:04] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:07] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:07] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:08] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:14] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:14] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:14] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:17] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:17] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:17] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:20] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:20] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:20] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:23] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:23] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:23] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:26] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:26] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:26] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:29] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:29] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:29] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:32] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:32] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:32] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:35] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:35] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:35] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:38] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:38] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:38] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:41] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:41] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:42] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:44] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:44] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:45] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:48] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:48] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:51] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:51] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:51] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:54] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:54] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:54] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:57] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:12:57] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:12:57] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:00] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:00] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:00] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:03] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:03] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:03] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:06] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:06] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:06] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:09] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:09] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:09] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:12] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:12] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:12] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:15] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:13:15] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:13:15] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:13:15] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:15] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:15] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:18] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:18] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:18] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:20] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:13:20] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:13:21] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:13:21] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:13:21] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:21] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:21] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:22] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:13:23] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:13:24] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:24] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:24] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:27] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:27] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:28] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:30] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:30] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:31] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:33] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:33] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:34] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:36] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:36] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:37] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:38] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:13:39] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:39] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:40] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:43] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:43] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:43] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:46] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:46] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:46] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:49] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:49] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:49] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:52] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:52] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:52] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:55] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:55] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:55] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:58] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:13:58] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:13:58] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:14:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:04] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:14:04] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:04] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:07] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:14:07] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:07] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:10] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:14:10] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:10] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:14:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:13] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:16] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:14:16] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:17] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:14:17] User requested system shutdown. Shutting down...
+[2024-04-11 14:14:19] System exiting safely...
+[2024-04-11 14:19:50] Watch dog started at 2024-04-11 14:19:50
+[2024-04-11 14:19:50] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:19:50] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 14:19:50] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:19:50] System started at 2024-04-11 14:19:50
+[2024-04-11 14:20:01] get_value_from_tag: found space-x=750
+[2024-04-11 14:20:01] get_value_from_tag: found space-y=370
+[2024-04-11 14:20:01] get_value_from_tag: found space-width=500
+[2024-04-11 14:20:01] get_value_from_tag: found space-height=200
+[2024-04-11 14:20:01] get_value_from_tag: found move-dist=50
+[2024-04-11 14:20:01] Space Dimensions: x=750, y=370, width=500, height=200, move-dist=50
+[2024-04-11 14:20:01] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 14:20:01] get_value_from_tag: found resource=cpu
+[2024-04-11 14:20:01] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 14:20:01] get_value_from_tag: found occupied-timer=10
+[2024-04-11 14:20:01] get_value_from_tag: found camera=0
+[2024-04-11 14:20:01] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 14:20:01] get_value_from_tag: found status=success
+[2024-04-11 14:20:01] Using new reference frame.
+[2024-04-11 14:20:01] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:20:01] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:03] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:20:03] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:20:04] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:04] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:05] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:07] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:07] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:08] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:10] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:10] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:13] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:20:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:14] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:16] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:16] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:17] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:20] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:20] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:20] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:23] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:23] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:23] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:26] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:26] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:26] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:29] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:29] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:29] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:32] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:32] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:32] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:35] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:35] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:35] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:38] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:38] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:38] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:41] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:41] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:41] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:44] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:44] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:45] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:47] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:47] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:50] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:50] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:51] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:53] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:53] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:54] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:57] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:20:57] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:20:57] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:00] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:21:00] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:00] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:03] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:21:03] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:03] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:06] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:21:06] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:06] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:09] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:21:09] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:09] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:12] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:21:12] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:12] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:21:14] User requested system shutdown. Shutting down...
+[2024-04-11 14:21:15] System exiting safely...
+[2024-04-11 14:25:02] Watch dog started at 2024-04-11 14:25:02
+[2024-04-11 14:25:02] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:02] get_value_from_tag: found csv-column-names=occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight
+[2024-04-11 14:25:02] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:25:02] System started at 2024-04-11 14:25:02
+[2024-04-11 14:25:11] get_value_from_tag: found space-x=750
+[2024-04-11 14:25:11] get_value_from_tag: found space-y=370
+[2024-04-11 14:25:11] get_value_from_tag: found space-width=500
+[2024-04-11 14:25:11] get_value_from_tag: found space-height=200
+[2024-04-11 14:25:11] get_value_from_tag: found move-dist=50
+[2024-04-11 14:25:11] Space Dimensions: x=750, y=370, width=500, height=200, move-dist=50
+[2024-04-11 14:25:11] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 14:25:11] get_value_from_tag: found resource=cpu
+[2024-04-11 14:25:11] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 14:25:11] get_value_from_tag: found occupied-timer=10
+[2024-04-11 14:25:11] get_value_from_tag: found camera=0
+[2024-04-11 14:25:11] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 14:25:11] get_value_from_tag: found status=success
+[2024-04-11 14:25:11] Using new reference frame.
+[2024-04-11 14:25:11] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:25:11] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:12] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:25:12] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:25:14] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:14] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:14] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:17] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:17] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:17] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:18] User requests reference frame reset.
+[2024-04-11 14:25:18] User requests reference frame reset.
+[2024-04-11 14:25:19] Move Up: Space at X:750 Y:320
+[2024-04-11 14:25:19] Move Up: Space at X:750 Y:270
+[2024-04-11 14:25:19] Move Up: Space at X:750 Y:220
+[2024-04-11 14:25:19] Move Up: Space at X:750 Y:170
+[2024-04-11 14:25:19] Move Up: Space at X:750 Y:120
+[2024-04-11 14:25:20] Move Up: Space at X:750 Y:70
+[2024-04-11 14:25:20] Move Left: Space at X:700 Y:70
+[2024-04-11 14:25:20] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:20] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:21] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:26] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:26] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:26] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:29] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:29] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:29] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:32] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:32] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:32] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:35] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:35] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:35] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:38] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:38] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:39] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:41] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:41] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:41] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:44] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:44] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:44] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:47] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:47] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:50] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:50] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:50] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:53] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:53] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:53] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:56] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:56] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:56] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:59] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:25:59] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:25:59] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:02] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:02] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:02] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:05] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:05] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:05] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:08] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:08] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:09] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:12] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:14] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:14] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:15] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:17] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:17] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:18] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:20] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:20] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:21] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:24] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:24] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:24] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:27] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:27] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:27] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:30] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:30] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:30] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:33] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:33] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:33] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:36] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:36] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:36] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:36] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:26:36] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:26:37] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:26:37] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:26:39] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:39] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:39] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:42] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:42] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:42] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:43] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:26:43] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:26:45] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:45] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:45] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:48] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:48] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:48] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:51] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:51] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:51] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:54] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:54] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:55] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:57] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:26:57] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:26:57] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:00] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:00] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:00] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:03] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:27:03] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:27:03] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:03] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:04] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:06] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:06] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:07] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:09] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:09] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:10] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:12] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:12] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:13] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:16] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:16] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:16] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:19] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:19] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:19] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:22] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:22] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:22] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:25] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:25] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:25] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:26] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:27:27] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:27:28] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:28] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:28] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:31] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:31] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:31] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:34] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:34] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:34] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:37] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:37] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:37] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:40] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:40] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:40] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:43] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:43] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:43] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:46] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:46] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:46] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:49] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:49] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:49] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:52] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:52] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:52] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:55] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:55] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:55] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:58] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:27:58] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:27:58] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:04] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:04] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:04] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:07] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:07] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:07] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:10] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:10] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:10] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:13] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:13] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:14] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:16] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:16] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:17] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:19] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:19] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:20] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:22] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:22] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:23] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:25] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:25] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:26] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:28] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:28] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:29] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:31] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:31] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:32] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:34] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:34] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:35] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:37] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:37] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:38] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:41] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:41] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:41] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:44] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:44] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:44] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:47] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:47] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:47] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:47] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:28:47] Status Update: New status='SPACE OCCUPIED - CAR IN SPACE'
+[2024-04-11 14:28:50] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:50] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:50] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:53] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:53] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:53] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:56] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:56] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:56] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:28:59] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:28:59] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:00] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:02] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:02] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:02] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:05] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:05] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:05] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:08] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:08] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:08] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:11] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:11] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:11] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:14] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:14] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:15] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:15] Status Update: New status='SPACE OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:29:15] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:29:17] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:17] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:18] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:20] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:20] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:21] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:21] User throws an error. This is normal.
+[2024-04-11 14:29:23] System failed. Restarting...
+[2024-04-11 14:29:28] System started at 2024-04-11 14:29:28
+[2024-04-11 14:29:36] get_value_from_tag: found space-x=700
+[2024-04-11 14:29:36] get_value_from_tag: found space-y=70
+[2024-04-11 14:29:36] get_value_from_tag: found space-width=500
+[2024-04-11 14:29:36] get_value_from_tag: found space-height=200
+[2024-04-11 14:29:36] get_value_from_tag: found move-dist=50
+[2024-04-11 14:29:36] Space Dimensions: x=700, y=70, width=500, height=200, move-dist=50
+[2024-04-11 14:29:36] get_value_from_tag: found weights=yolov5/yolov5s.pt
+[2024-04-11 14:29:36] get_value_from_tag: found resource=cpu
+[2024-04-11 14:29:36] YOLOv5: weights=yolov5/yolov5s.pt, device=cpu
+[2024-04-11 14:29:36] get_value_from_tag: found occupied-timer=10
+[2024-04-11 14:29:36] get_value_from_tag: found camera=0
+[2024-04-11 14:29:36] get_value_from_tag: found rframe-save-location=src/data/PreviousReferenceFrame.npy
+[2024-04-11 14:29:37] get_value_from_tag: found status=failed
+[2024-04-11 14:29:37] Previous reference frame found. Loading src/data/PreviousReferenceFrame.npy
+[2024-04-11 14:29:37] get_value_from_tag: found system-output-location=src/plutosrc/data.txt
+[2024-04-11 14:29:37] get_value_from_tag: found csv-file-location=src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:38] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:29:38] Status Update: New status='SPACE NOT OCCUPIED - CAR NOT IN SPACE'
+[2024-04-11 14:29:40] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:40] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:40] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:43] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:43] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:43] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:46] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:46] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:46] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:49] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:49] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:49] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:52] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:52] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:52] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:55] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:55] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:55] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:58] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:29:58] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:29:58] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:30:01] Reading CSV File: src/plutosrc/csv/parkit-data.csv
+[2024-04-11 14:30:01] get_value_from_tag: found data-analytics-graph=src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:30:01] Graph saved to src/plutosrc/png/parkit-data-analytics-graph.png
+[2024-04-11 14:30:02] User requested system shutdown. Shutting down...
+[2024-04-11 14:30:03] System exiting safely...
