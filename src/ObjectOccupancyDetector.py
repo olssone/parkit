@@ -74,6 +74,7 @@ yolov5_model = YOLOv5(weights, device=resource)
 
 data_output_fd = get_value_from_tag(sys_config, "system-output-location")
 csv_file_location = get_value_from_tag(sys_config, "csv-file-location")
+graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
 
 # Reference frame used when checking occupancy
 # Use previously loaded reference frame if the status is marked as failed
@@ -225,16 +226,15 @@ while True:
         write_text_to_file(data_output_fd, formated_data)
 
     current_time = time.time()
-    elapsed_time = current_time - csv_write_timer
-    if elapsed_time > 3:
+    elapsed_time_csv = current_time - csv_write_timer
+    
+    if elapsed_time_csv > 2 and msg_occu and msg_occu is not None:
         csv_write_timer = time.time()
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         csv_data = f"{msg_occu},{msg_car},{timestamp},{rectx},{recty},{rectw},{recth}"
         append_text_to_file(csv_file_location, csv_data)
         data = read_csv(csv_file_location)
-        graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
         plot_and_save_graph(data, graph_file_location)
-
 
     cv2.imshow('frame', frame)
 
