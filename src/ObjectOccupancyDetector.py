@@ -71,12 +71,16 @@ rect = [rectx, recty, rectw, recth]
 # Load a pre-trained YOLOv5 model on the application server CPU
 yolov5_model = YOLOv5(weights, device=resource)  
 
+
+data_output_fd = get_value_from_tag(sys_config, "system-output-location")
+csv_file_location = get_value_from_tag(sys_config, "csv-file-location")
+
 # Reference frame used when checking occupancy
 # Use previously loaded reference frame if the status is marked as failed
-
 reference_frame = None
 if get_value_from_tag(sys_config, "status") == "failed":
     reference_frame = np.load(prev_saved_rframe)
+    append_text_to_file(csv_file_location, "### SYSTEM RESTART ###")
     log(f"Previous reference frame found. Loading {prev_saved_rframe}")
 else:
     log("Using new reference frame.")
@@ -89,9 +93,6 @@ msg_occu = ""
 msg_car = ""
 last_car = ""
 last_occu = ""
-
-data_output_fd = get_value_from_tag(sys_config, "system-output-location")
-csv_file_location = get_value_from_tag(sys_config, "csv-file-location")
 
 csv_write_timer = time.time()
 

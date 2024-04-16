@@ -11,19 +11,38 @@ sys_config = "src/ParkitConfiguration.xml"
 def read_csv(filename):
     log(f"Reading CSV File: {filename}")  # Print out the filename
     data = []
+    skip = False
+    skip_count = 0
+
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         next(reader)  # Skip header
+        # Skip the line with "### SYSTEM RESTART ###" and 3 lines after.
         for row in reader:
+            if skip:
+                if skip_count < 4:
+                    skip_count += 1
+                    continue  
+                else:
+                    skip = False
+                    skip_count = 0
+
+            if row[0] == "### SYSTEM RESTART ###":
+                skip = True 
+                continue  
+
             if row[0].startswith("#"):
-                continue
+                continue 
+
             status_car = row[1] == 'CAR IN SPACE'
             time = datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
             rectangle_x = float(row[3])
             rectangle_y = float(row[4])
             rectangle_width = float(row[5])
             rectangle_height = float(row[6])
+
             data.append((status_car, time, rectangle_x, rectangle_y, rectangle_width, rectangle_height))
+
     return data
 
 # Function to plot graph and save it to a PNG file
