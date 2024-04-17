@@ -1,3 +1,4 @@
+from collections import deque
 import csv
 import matplotlib.pyplot as plt
 from datetime import datetime
@@ -11,19 +12,45 @@ sys_config = "src/ParkitConfiguration.xml"
 def read_csv(filename):
     log(f"Reading CSV File: {filename}")  # Print out the filename
     data = []
+    skip = False
+    skip_count = 0
+    window_size = 5  # Define the size of the sliding window
+    window = deque(maxlen=window_size)  # Initialize a deque for the sliding window
+
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         next(reader)  # Skip header
         for row in reader:
+            if skip:
+                if skip_count < 4:
+                    skip_count += 1
+                    continue  # Skip the current loop iteration
+                else:
+                    skip = False
+                    skip_count = 0
+
+            if row[0] == "### SYSTEM RESTART ###":
+                skip = True  # Initiate skipping
+                continue  # Skip the line with "### SYSTEM RESTART ###"
+
             if row[0].startswith("#"):
-                continue
-            status_car = row[1] == 'CAR IN SPACE'
+                continue  # Skip any row that starts with "#"
+
+            # Append current status to the sliding window
+            window.append(row[1] == 'CAR IN SPACE')
+
+            # Determine if a car is present based on the sliding window
+            # Considering true if the majority within the window are 'CAR IN SPACE'
+            status_car = window.count(True) > len(window) / 2
+
             time = datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
             rectangle_x = float(row[3])
             rectangle_y = float(row[4])
             rectangle_width = float(row[5])
             rectangle_height = float(row[6])
+
             data.append((status_car, time, rectangle_x, rectangle_y, rectangle_width, rectangle_height))
+
     return data
 
 # Function to plot graph and save it to a PNG file
