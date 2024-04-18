@@ -90,11 +90,11 @@ def write_text_to_file(file_path, text):
         with open(file_path, 'w') as file:
             file.write(f"{text}")
     else:
-        print(f"Note: The file '{file_path}' does not exist. It will be created.")
+        print(f"OK: The file '{file_path}' does not exist. It will be created.")
         # Open the file in write mode, which will create the file if it doesn't exist
         with open(file_path, 'w') as file:
             file.write(text)
-        print("File created and text written.")
+        log(f"File: {file_path} text written.")
 
 def append_text_to_file(file_path, text):
     # Check if the provided file path is valid
@@ -106,8 +106,8 @@ def append_text_to_file(file_path, text):
         with open(file_path, 'a') as file:
             file.write(f"\n{text}")
     else:
-        print(f"Note: The file '{file_path}' does not exist. It will be created.")
+        print(f"OK: The file '{file_path}' does not exist. It will be created.")
         # Open the file in write mode, which will create the file if it doesn't exist
         with open(file_path, 'w') as file:
             file.write(text)
-        print("File created and text written.")
+        log(f"File: {file_path} text written.")

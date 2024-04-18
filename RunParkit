@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+pwd=$(pwd)
+wd=$(basename ${pwd})
+
+if [[ ${wd} != "parkit" ]]; then
+    echo "You are working in: '${wd}'"
+    echo "You need to be in:  'parkit'"
+else
+    /usr/bin/python3 src/ParkitWatchDog.py 2>/dev/null
+fi

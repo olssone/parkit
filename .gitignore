@@ -1,6 +1,9 @@
-opencv-env/*
+opencv-env/
 src/__pycache__
-src/data/*
-src/plutosrc/csv/*
-src/plutosrc/png
 .DS_Store
+src/ParkitConfiguration.xml
+src/data/PreviousReferenceFrame.npy
+src/data/parkit.log
+src/plutosrc/csv/parkit-data.csv
+src/plutosrc/png/parkit-data-analytics-graph.png
+src/plutosrc/data.txt
