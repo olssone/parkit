@@ -57,28 +57,29 @@ def plot_and_save_graph(data, filename):
     # Extract data for plotting
     times = [entry[1] for entry in data]
     car_presence = [1 if entry[0] else 0 for entry in data]  # 1 if car is in space, 0 if not
-    
+
     # Create the plot
-    plt.figure(figsize=(13, 6))
-    
-    # Plot each point, color it based on car presence
+    plt.figure(figsize=(13, 6), dpi=300)  # Increased resolution for clearer output
+
+    # Plot each point, color it based on car presence, with thicker lines
     for i in range(len(times)-1):
-        plt.plot(times[i:i+2], car_presence[i:i+2], color='red' if car_presence[i] == 1 else 'green')
-    
-    plt.xlabel('Time')
-    plt.ylabel('Space Occupancy')
-    plt.title('Parking Space Occupancy over Time')
-    plt.yticks([0, 1], ['Space Vacant', 'Space Occupied'])  # Custom labels for y-axis
+        plt.plot(times[i:i+2], car_presence[i:i+2], color='red' if car_presence[i] == 1 else 'green', lw=4)
+
+    plt.xlabel('Time', fontsize=24)  # x-axis
+    plt.ylabel('Space Occupancy', fontsize=24)  # y-axis
+    plt.title('Live Parking Lot Status', fontsize=36)  # title label
+    plt.yticks([0, 1], ['Space Vacant', 'Space Occupied'], fontsize=18)  # Adjusted font size for better fit
+    plt.ylim(-0.1, 1.1)  # Adjust y-axis limits to close gap
     plt.grid(True)
-    
-    # Create custom legend
+
+    # Create custom legend with thicker lines
     legend_elements = [Line2D([0], [0], color='green', lw=4, label='Space Vacant'),
                        Line2D([0], [0], color='red', lw=4, label='Space Occupied')]
-    
-    plt.legend(handles=legend_elements, loc='upper left', bbox_to_anchor=(1, 1))
- 
+
+    plt.legend(handles=legend_elements, fontsize=12, loc='upper left', bbox_to_anchor=(1, 1))  # legend
+
     # Adjust layout to not cut off legend since it needs to be outside of the graph.
-    plt.tight_layout()  
+    plt.tight_layout()
 
     # Save the plot as a PNG file
     plt.savefig(filename)
