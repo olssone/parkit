@@ -53,11 +53,6 @@
             color: white;
           }
     </style>
-    <script>
-        setInterval(function() {
-            location.reload();
-        }, 3000); // 1000 milliseconds = 1 second
-    </script>
 </head>
 <body>
     <div class="container">
@@ -68,10 +63,17 @@
             <a class="active" href="#dataAnalytics">Data Analytics</a>
         </div>
         <p>Data Analytics</p>
-        <center><img src="./png/parkit-data-analytics-graph.png" width="600" height="400"></center>
-
+        <center><img id="dataImage" src="./png/parkit-data-analytics-graph.png" width="600" height="400"></center>
     </div>
+    <script>
+        function updateImage() {
+            const img = document.getElementById('dataImage');
+            // Update the image source with a cache-busting query parameter
+            img.src = './png/parkit-data-analytics-graph.png?time=' + new Date().getTime();
+        }
     
+        // Set the interval to update the image every 3000 milliseconds (3 seconds)
+        setInterval(updateImage, 2000);
+    </script>    
 </body>
-
 </html>
