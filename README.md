@@ -1,7 +1,7 @@
 # Park It!
 Parking Space Monitoring System for Senior Project. Spring 2024.
 
-## To run:
+## Installation:
 Enter all the commands in order, one at a time!
 ### Install Repo Dependencies
 ```bash
@@ -17,8 +17,8 @@ git clone https://github.com/ultralytics/yolov5.git
 cd yolov5
 pip install -r requirements.txt
 ```
-### Run the actual Parking Space Monitor Script
+### Run the "Park-It!" system:
 ```bash
 cd parkit
-python3 ParkitWatchDog.py
+./RunParkit
 ```
