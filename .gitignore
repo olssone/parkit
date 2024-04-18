@@ -1,4 +1,6 @@
 opencv-env/
+#Jake
+.vscode/
 src/__pycache__
 .DS_Store
 src/ParkitConfiguration.xml
