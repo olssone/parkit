@@ -17,12 +17,6 @@ This Python program contains all application "Park It!" system components:
     for cars. The intended use of this ML algorithm is to verify that the object
     occupying the parking space is indeed a vehicle.
 
-    3. Pluto Connection Data Stream: A simple SSH session used for one-way
-    data communication from the Park It! application server to the Pluto web 
-    server. The intended use of this data stream is to relay system status 
-    information so that the end-user can remotely check if the parking space
-    is available.
-
 
 '''
 
@@ -39,7 +33,7 @@ from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text
 from CSVConvertGraphs import plot_and_save_graph, read_csv
 
 # System Configuration File
-sys_config = "src/ParkitConfiguration.xml"
+sys_config = "ParkitConfiguration.xml"
 
 # Read all configuration data by parsing XML file...
 # Space Dimensions & Properties
@@ -103,10 +97,13 @@ def check_occupation(frame, rect, reference_frame):
 
     # Obtain parking space rectangle location on frame
     x, y, w, h = rect
-
-    # Reference of Interest: The video frame inside the space
+    
+    x, y, w, h = validate_position(rect, frame.shape[1], frame.shape[0])
+    
     roi = frame[y:y+h, x:x+w]
-    if reference_frame is not None:
+    if reference_frame is not None and roi is not None:
+
+
         # Get the difference & convert to grey scale
         diff = cv2.absdiff(roi, reference_frame)
         gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
@@ -125,16 +122,28 @@ def check_occupation(frame, rect, reference_frame):
             confirmed_occupied = False
 
         return occupied, reference_frame
-
-    return False, reference_frame
+    else:
+        print("ROI or Reference Frame is None.")
+        return False, reference_frame
 
 # Ensure rectangle stays within frame boundaries
 def validate_position(rect, frame_width, frame_height):
     x, y, w, h = rect
-    if x < 0: x = 0
-    if y < 0: y = 0
-    if x + w > frame_width: x = frame_width - w
-    if y + h > frame_height: y = frame_height - h
+    if x < 0: 
+        w += x  # Decrease width to fit within the frame
+        x = 0   # Set x-coordinate to 0
+    if y < 0: 
+        h += y  # Decrease height to fit within the frame
+        y = 0   # Set y-coordinate to 0
+    if x + w > frame_width: 
+        w = frame_width - x  # Decrease width to fit within the frame
+        if w < 0:
+            w = 50  # Ensure width is not negative
+    if y + h > frame_height: 
+        h = frame_height - y  # Decrease height to fit within the frame
+        if h < 0:
+            h = 50  # Ensure height is not negative
+    
     return [x, y, w, h]
 
 def reset_reference_frame():

@@ -1,3 +1,15 @@
+'''
+
+        +----------------------------+
+        |     ParkitWatchDog.py      |
+        +----------------------------+
+
+This Python script serves as a watchdog for the Parkit system. It monitors the execution of 
+the main script 'ObjectOccupancyDetector.py', restarts it if it crashes, and logs system events. 
+The watchdog ensures that the system runs smoothly and handles any unexpected errors gracefully.
+        
+'''
+
 from datetime import datetime
 import subprocess
 import time

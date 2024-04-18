@@ -76,7 +76,7 @@
 
     <script>
         function fetchData() {
-            fetch('get_latest_data.php')  // Adjust the URL to your actual data source
+            fetch('./get_latest_data.php')  // Adjust the URL to your actual data source
             .then(response => response.text())
             .then(data => {
                 document.getElementById('dataDisplay').innerText = data;

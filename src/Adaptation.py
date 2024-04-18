@@ -1,8 +1,24 @@
+'''
+
+        +----------------------------+
+        |       Adaptation.py        |
+        +----------------------------+
+
+This module provides utility functions for interacting with XML files, logging messages with timestamps,
+and writing/appending text to files. It includes functions to retrieve values from XML tags, update XML
+tag values, log messages to a specified file, and write or append text to files.
+
+
+'''
+
+
+
+
 import os
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
-def get_value_from_tag(file_path, tag):
+def get_value_from_tag(file_path, tag, default=None):
     """
     Parses an XML file and returns the text content of the first occurrence of a specified tag.
     
@@ -39,7 +55,7 @@ def log(message):
     """
     # Get the current timestamp
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    filename = "src/data/parkit.log"
+    filename = "data/parkit.log"
     
     # Open the file in append mode and write the message
     with open(filename, 'a') as log_file:

@@ -1,6 +1,6 @@
 <?php
 // Specify the same file used in data_receiver.php
-$filePath = 'data.txt';
+$filePath = './data.txt';
 
 // Check if the data file exists and is readable
 if (file_exists($filePath) && is_readable($filePath)) {
