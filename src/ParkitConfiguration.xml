@@ -1,0 +1,26 @@
+<parkit>
+    <space-definition>
+        <space-x>700</space-x>
+        <space-y>70</space-y>
+        
+        <space-width>500</space-width>
+        <space-height>200</space-height>
+        
+        <move-dist>50</move-dist>
+        <occupied-timer>10</occupied-timer>
+    </space-definition>
+    <yolov5-settings>
+        <weights>yolov5/yolov5s.pt</weights>
+        <resource>cpu</resource>
+    </yolov5-settings>
+    <data>
+        <camera>0</camera>
+        <log-file-location>src/data/parkit.log</log-file-location>
+        <data-analytics-graph>src/appsrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
+        <csv-file-location>src/appsrc/csv/parkit-data.csv</csv-file-location>
+        <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
+        <system-output-location>src/appsrc/data.txt</system-output-location>
+        <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>
+    </data>
+    <status>success</status>
+</parkit>

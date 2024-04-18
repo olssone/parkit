@@ -1,11 +1,7 @@
 # Park It!
 Parking Space Monitoring System for Senior Project. Spring 2024.
 
-## Working on:
-```bash
-occupany+objectdetect-v2-working.py
-```
-## To run:
+## Installation:
 Enter all the commands in order, one at a time!
 ### Install Repo Dependencies
 ```bash
@@ -21,8 +17,8 @@ git clone https://github.com/ultralytics/yolov5.git
 cd yolov5
 pip install -r requirements.txt
 ```
-### Run the actual Parking Space Monitor Script
+### Run the "Park-It!" system:
 ```bash
-cd parkit/workingExamples/
-python3 occupany+objectdetect-v2-working.py
+cd parkit
+./RunParkit
 ```
