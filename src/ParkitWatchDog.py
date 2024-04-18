@@ -1,4 +1,3 @@
-
 from datetime import datetime
 import subprocess
 import time
@@ -9,12 +8,14 @@ from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 log(f"Watch dog started at {now}")
 
-sys_config = "src/ParkitConfiguration.xml"
-main_script = "src/ObjectOccupancyDetector.py"
-csv_file = get_value_from_tag(sys_config, "csv-file-location")
-csv_columns = get_value_from_tag(sys_config, "csv-column-names")
-output_stream = get_value_from_tag(sys_config, "system-output-location")
+sys_config        = "src/ParkitConfiguration.xml"
+main_script       = "src/ObjectOccupancyDetector.py"
+csv_file          = get_value_from_tag(sys_config, "csv-file-location")
+csv_columns       = get_value_from_tag(sys_config, "csv-column-names")
+output_stream     = get_value_from_tag(sys_config, "system-output-location")
+log_file_location = get_value_from_tag(sys_config, "log-file-location")
 
+# Added protection as RunParkit script already performs this check.
 current_directory = os.path.basename(os.getcwd())
 all_items = os.listdir('./')
 if current_directory != "parkit":
@@ -29,35 +30,38 @@ elif 'src' not in all_items:
     exit()
 
 # Create CSV file and give column names
-os.remove(csv_file)
-
 if not os.path.exists(csv_file):
     append_text_to_file(csv_file,csv_columns)
+else:
+    os.remove(csv_file)
 
+# Make sure there is a log file
+if not os.path.exists(log_file_location):
+    open(log_file_location, "x")
+
+# Catch only keyboard exceptions so user can manually kill the process
 try:
     while True:
         process = subprocess.Popen(['python', main_script])
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log(f"System started at {now}")
-        loading_dots = ""
-        for _ in range(5):  # Number of dots to append
-            loading_dots += '.'
-            write_text_to_file(output_stream, f"Park-It is loading {loading_dots}")
-            time.sleep(0.5) 
-        process.wait()  # Wait for the process to exit
+
+        write_text_to_file(output_stream, f"Park-It is loading... ")
+        process.wait()
+        # Once process finishes, check its return code, then handle
         if process.returncode != 0:
-            print("Script crashed. Restarting...")
+            print("System crashed. Restarting...")
             update_xml_tag_value(sys_config, "status", "failed")
-            log("System failed. Restarting...")
+            log("System crashed. Restarting...")
             # Clean up
             os.remove(output_stream)
-            time.sleep(5)  # Delay before restarting
+            time.sleep(3)  
         else:
             update_xml_tag_value(sys_config, "status", "success")
             log("System exiting safely...")
             # Clean up
             os.remove(output_stream)
-            break  # Exit loop if the script exits cleanly
+            break 
 except KeyboardInterrupt:
     # Log the keyboard interrupt
     log("System terminated with force. Keyboard interrupt.")
