@@ -7,5 +7,8 @@ if [[ ${wd} != "parkit" ]]; then
     echo "You are working in: '${wd}'"
     echo "You need to be in:  'parkit'"
 else
+    for i in src/data src/appsrc/png src/appsrc/csv; do
+        mkdir -p ${i}
+    done
     /usr/bin/python3 src/ParkitWatchDog.py 2>/dev/null
 fi
