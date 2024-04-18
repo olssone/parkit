@@ -8,7 +8,7 @@ if [[ ${wd} != "parkit" ]]; then
     echo "You are working in: '${wd}'"
     echo "You need to be in:  'parkit'"
 else
-    for i in src/data src/appsrc/png src/appsrc/csv; do
+    for i in src/data src/appsrc/png src/appsrc/csv src/appsrc/gallery; do
         mkdir -p ${i}
     done
 

@@ -1,19 +1,43 @@
 from datetime import datetime
+import shutil
 import subprocess
 import time
 import os
 import xml.etree.ElementTree as ET
 from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file, append_text_to_file
 
+def get_formatted_datetime():
+    # Get current date and time
+    now = datetime.now()
+    # Format the datetime string
+    datetime_string = now.strftime("%Y-%m-%d-%H-%M-%S")
+    return datetime_string
+
+
+def copy_and_rename_file(source, destination):
+    try:
+        # Move and rename the file
+        shutil.copy(source, destination)
+        print(f"File moved and renamed from {source} to {destination}")
+    except FileNotFoundError:
+        print("The source file does not exist.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 log(f"Watch dog started at {now}")
 
-sys_config        = "src/ParkitConfiguration.xml"
-main_script       = "src/ObjectOccupancyDetector.py"
-csv_file          = get_value_from_tag(sys_config, "csv-file-location")
-csv_columns       = get_value_from_tag(sys_config, "csv-column-names")
-output_stream     = get_value_from_tag(sys_config, "system-output-location")
-log_file_location = get_value_from_tag(sys_config, "log-file-location")
+sys_config          = "src/ParkitConfiguration.xml"
+main_script         = "src/ObjectOccupancyDetector.py"
+csv_file            = get_value_from_tag(sys_config, "csv-file-location")
+csv_columns         = get_value_from_tag(sys_config, "csv-column-names")
+output_stream       = get_value_from_tag(sys_config, "system-output-location")
+log_file_location   = get_value_from_tag(sys_config, "log-file-location")
+gallery_location    = get_value_from_tag(sys_config, "gallery-location")
+graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
+graph_base_name     = os.path.basename(graph_file_location)[0:-4]
+
+gallery_graph       = gallery_location + "/" + graph_base_name + "-" + get_formatted_datetime() + ".png"
 
 # Added protection as RunParkit script already performs this check.
 current_directory = os.path.basename(os.getcwd())
@@ -59,6 +83,7 @@ try:
         else:
             update_xml_tag_value(sys_config, "status", "success")
             log("System exiting safely...")
+            copy_and_rename_file(graph_file_location, gallery_graph)
             # Clean up
             os.remove(output_stream)
             break 
@@ -66,7 +91,7 @@ except KeyboardInterrupt:
     # Log the keyboard interrupt
     log("System terminated with force. Keyboard interrupt.")
     print("Program terminated by user.")
-    os.remove(output_stream)
     
-
+    copy_and_rename_file(graph_file_location, gallery_graph)
+    os.remove(output_stream)
 
