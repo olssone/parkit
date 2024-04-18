@@ -4,6 +4,7 @@ src/__pycache__
 src/ParkitConfiguration.xml
 src/data/PreviousReferenceFrame.npy
 src/data/parkit.log
+src/data/erros.log
 src/appsrc/csv/parkit-data.csv
 src/appsrc/png/parkit-data-analytics-graph.png
 src/appsrc/data.txt

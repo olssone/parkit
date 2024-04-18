@@ -2,6 +2,7 @@
 
 pwd=$(pwd)
 wd=$(basename ${pwd})
+errorfnamepath="src/data/errors.log"
 
 if [[ ${wd} != "parkit" ]]; then
     echo "You are working in: '${wd}'"
@@ -10,5 +11,9 @@ else
     for i in src/data src/appsrc/png src/appsrc/csv; do
         mkdir -p ${i}
     done
-    /usr/bin/python3 src/ParkitWatchDog.py 2>/dev/null
+
+    if [[ ! -f ${errorfnamepath} ]]; then
+        echo $(date) > ${errorfnamepath}
+    fi
+    /usr/bin/python3 src/ParkitWatchDog.py 2>${errorfnamepath}
 fi

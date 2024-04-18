@@ -10,7 +10,6 @@ sys_config = "src/ParkitConfiguration.xml"
 
 # Function to read data from a CSV file
 def read_csv(filename):
-    log(f"Reading CSV File: {filename}")  # Print out the filename
     data = []
     skip = False
     skip_count = 0
@@ -83,4 +82,3 @@ def plot_and_save_graph(data, filename):
 
     # Save the plot as a PNG file
     plt.savefig(filename)
-    log(f"Graph saved to {filename}")
