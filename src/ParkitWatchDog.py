@@ -1,4 +1,3 @@
-
 from datetime import datetime
 import subprocess
 import time
@@ -16,6 +15,7 @@ csv_columns       = get_value_from_tag(sys_config, "csv-column-names")
 output_stream     = get_value_from_tag(sys_config, "system-output-location")
 log_file_location = get_value_from_tag(sys_config, "log-file-location")
 
+# Added protection as RunParkit script already performs this check.
 current_directory = os.path.basename(os.getcwd())
 all_items = os.listdir('./')
 if current_directory != "parkit":
@@ -39,6 +39,7 @@ else:
 if not os.path.exists(log_file_location):
     open(log_file_location, "x")
 
+# Catch only keyboard exceptions so user can manually kill the process
 try:
     while True:
         process = subprocess.Popen(['python', main_script])
@@ -46,20 +47,21 @@ try:
         log(f"System started at {now}")
 
         write_text_to_file(output_stream, f"Park-It is loading... ")
-        process.wait()  # Wait for the process to exit
+        process.wait()
+        # Once process finishes, check its return code, then handle
         if process.returncode != 0:
-            print("Script crashed. Restarting...")
+            print("System crashed. Restarting...")
             update_xml_tag_value(sys_config, "status", "failed")
-            log("System failed. Restarting...")
+            log("System crashed. Restarting...")
             # Clean up
             os.remove(output_stream)
-            time.sleep(5)  # Delay before restarting
+            time.sleep(3)  
         else:
             update_xml_tag_value(sys_config, "status", "success")
             log("System exiting safely...")
             # Clean up
             os.remove(output_stream)
-            break  # Exit loop if the script exits cleanly
+            break 
 except KeyboardInterrupt:
     # Log the keyboard interrupt
     log("System terminated with force. Keyboard interrupt.")

@@ -16,10 +16,10 @@
     <data>
         <camera>0</camera>
         <log-file-location>src/data/parkit.log</log-file-location>
-        <data-analytics-graph>src/plutosrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
-        <csv-file-location>src/plutosrc/csv/parkit-data.csv</csv-file-location>
+        <data-analytics-graph>src/appsrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
+        <csv-file-location>src/appsrc/csv/parkit-data.csv</csv-file-location>
         <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
-        <system-output-location>src/plutosrc/data.txt</system-output-location>
+        <system-output-location>src/appsrc/data.txt</system-output-location>
         <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>
     </data>
     <status>success</status>
