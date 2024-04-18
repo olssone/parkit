@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park It - Gallery</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="scripts.js" defer></script> <!-- Link to your JavaScript file -->
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            font-size: 40px;
+        }
+        .topnav {
+            background-color: #315781;
+            overflow: hidden;
+            display: flex;                /* Use flexbox */
+            justify-content: center;      /* Center horizontally */
+            align-items: center;          /* Align items vertically */
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0 10px;               /* Add horizontal margin between links */
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: hsl(206, 73%, 54%);
+            color: white;
+        }
+    .button {
+        background-color: #4CAF50; /* Green background */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 5px;
+        cursor: pointer; /* Add a pointer cursor on hover */
+    }
+    .button-blue {
+        background-color: #007bff; /* Blue background */
+    }
+    .button-blue:hover {
+        background-color: #0056b3; /* Darker blue background on hover */
+    }
+    .gallery-navigation {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Park It!</h1>
+        <div class="topnav">
+            <a href="live.html">Live Data</a>
+            <a href="dataAnalytics.html">Data Analytics</a>
+            <a class="active" href="#graphGallery">Graph Gallery</a>
+        </div>
+        
+        <center><img id="galleryImage" src="" alt="Gallery Image" width="600" height="400"></center>
+        <div id="caption">Image Caption</div>
+        
+        <div class="gallery-navigation">
+            <button id="prevButton" class="button button-blue" onclick="previousImage()">Back</button>
+            <button id="saveButton" class="button" onclick="saveImage()">Save Graph</button>
+            <button id="nextButton" class="button button-blue" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let images = [];
+        let currentImageIndex = 0;
+
+        // Fetch the list of images from the PHP file
+        fetch('list_graphs.php')
+            .then(response => response.json())
+            .then(data => {
+                images = data;
+                if (images.length > 0) {
+                    showImage(0); // Show the first image
+                }
+            })
+            .catch(error => console.error('Unable to load images:', error));
+
+        function showImage(index) {
+            currentImageIndex = index;
+            document.getElementById('galleryImage').src = images[index];
+            document.getElementById('caption').innerText = images[index].split('/').pop();
+            updateNavigation();
+        }
+
+        function updateNavigation() {
+            document.getElementById('prevButton').style.display = currentImageIndex > 0 ? '' : 'none';
+            document.getElementById('nextButton').style.display = currentImageIndex < images.length - 1 ? '' : 'none';
+        }
+
+        function nextImage() {
+            if (currentImageIndex < images.length - 1) {
+                showImage(currentImageIndex + 1);
+            }
+        }
+
+        function previousImage() {
+            if (currentImageIndex > 0) {
+                showImage(currentImageIndex - 1);
+            }
+        }
+
+        function saveImage() {
+            const currentImage = images[currentImageIndex];
+            const link = document.createElement('a');
+            link.href = currentImage;
+            link.download = currentImage.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

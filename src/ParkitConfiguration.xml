@@ -12,8 +12,8 @@ YOLOv5 model settings, data paths, and system status.
 
 <parkit>
     <space-definition>
-        <space-x>100</space-x>
-        <space-y>220</space-y>
+        <space-x>950</space-x>
+        <space-y>70</space-y>
         
         <space-width>500</space-width>
         <space-height>200</space-height>
@@ -27,21 +27,13 @@ YOLOv5 model settings, data paths, and system status.
     </yolov5-settings>
     <data>
         <camera>0</camera>
-<<<<<<< Updated upstream
         <log-file-location>src/data/parkit.log</log-file-location>
         <data-analytics-graph>src/appsrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
         <csv-file-location>src/appsrc/csv/parkit-data.csv</csv-file-location>
+        <gallery-location>src/appsrc/gallery</gallery-location>
         <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
         <system-output-location>src/appsrc/data.txt</system-output-location>
         <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>
-=======
-        <log-file-location>data/parkit.log</log-file-location>
-        <data-analytics-graph>plutosrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
-        <csv-file-location>plutosrc/csv/parkit-data.csv</csv-file-location>
-        <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
-        <system-output-location>plutosrc/data.txt</system-output-location>
-        <rframe-save-location>data/PreviousReferenceFrame.npy</rframe-save-location>
->>>>>>> Stashed changes
     </data>
     <status>success</status>
 </parkit>

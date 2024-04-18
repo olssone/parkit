@@ -20,45 +20,45 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-top: 50px;
-            text-align: center; /* Align content to the center */
         }
         h1 {
             color: #0066cc;
             text-align: center;
+            font-size: 40px;
         }
-        /* Add a blue background color to the top navigation */
         .topnav {
             background-color: #315781;
             overflow: hidden;
-          }
-          
-          /* Style the links inside the navigation bar */
-          .topnav a {
-            float: left;
+            display: flex;                /* Use flexbox */
+            justify-content: center;      /* Center horizontally */
+            align-items: center;          /* Align items vertically */
+        }
+
+        .topnav a {
             color: #f2f2f2;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
-          }
-          
-          /* Change the color of links on hover */
-          .topnav a:hover {
+            margin: 0 10px;               /* Add horizontal margin between links */
+        }
+
+        .topnav a:hover {
             background-color: #ddd;
             color: black;
-          }
-          
-          /* Add a color to the active/current link */
-          .topnav a.active {
+        }
+
+        .topnav a.active {
             background-color: hsl(206, 73%, 54%);
             color: white;
-          }
+        }
+
         #dataDisplay {
             padding: 15px;
             background-color: #e9e9e9;
             border-radius: 5px;
             margin-top: 20px;
-            font-size: 16px;
+            font-size: 28px;
             text-align: center;
         }
     </style>
@@ -68,8 +68,8 @@
         <h1>Park It!</h1>
         <div class="topnav">
             <a class="active" href="#live">Live Data</a>
-            <a href="about.html">About</a>
             <a href="dataAnalytics.html">Data Analytics</a>
+            <a href="graphGallery.html">Graph Gallery</a>
           </div>
         <div id="dataDisplay">Waiting for data...</div>
     </div>

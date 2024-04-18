@@ -1,9 +1,11 @@
 opencv-env/
+#Jake
+.vscode/
 src/__pycache__
 .DS_Store
 src/ParkitConfiguration.xml
-src/data/PreviousReferenceFrame.npy
-src/data/parkit.log
-src/appsrc/csv/parkit-data.csv
-src/appsrc/png/parkit-data-analytics-graph.png
+src/data/*
+src/appsrc/csv/*
+src/appsrc/png/*
 src/appsrc/data.txt
+src/appsrc/gallery/*
