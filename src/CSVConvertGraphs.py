@@ -59,7 +59,7 @@ def plot_and_save_graph(data, filename):
     car_presence = [1 if entry[0] else 0 for entry in data]  # 1 if car is in space, 0 if not
 
     # Create the plot
-    plt.figure(figsize=(13, 6), dpi=300)  # Increased resolution for clearer output
+    plt.figure(figsize=(13, 6))  # Increased resolution for clearer output
 
     # Plot each point, color it based on car presence, with thicker lines
     for i in range(len(times)-1):
@@ -76,7 +76,7 @@ def plot_and_save_graph(data, filename):
     legend_elements = [Line2D([0], [0], color='green', lw=4, label='Space Vacant'),
                        Line2D([0], [0], color='red', lw=4, label='Space Occupied')]
 
-    plt.legend(handles=legend_elements, fontsize=12, loc='upper left', bbox_to_anchor=(1, 1))  # legend
+    plt.legend(handles=legend_elements, fontsize=18, loc='lower left', bbox_to_anchor=(1, 1))  # legend
 
     # Adjust layout to not cut off legend since it needs to be outside of the graph.
     plt.tight_layout()
