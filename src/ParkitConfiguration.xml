@@ -1,3 +1,15 @@
+<!--
+
+    +////////////////////////////////+
+    |     ParkitConfiguration.xml    |
+    +////////////////////////////////+
+
+    This XML configuration file contains settings for the Parkit system, including space definitions,
+    YOLOv5 model settings, data paths, and system status.
+
+-->
+
+
 <parkit>
     <space-definition>
         <space-x>950</space-x>

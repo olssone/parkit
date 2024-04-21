@@ -17,13 +17,6 @@ This Python program contains all application "Park It!" system components:
     for cars. The intended use of this ML algorithm is to verify that the object
     occupying the parking space is indeed a vehicle.
 
-    3. Pluto Connection Data Stream: A simple SSH session used for one-way
-    data communication from the Park It! application server to the Pluto web 
-    server. The intended use of this data stream is to relay system status 
-    information so that the end-user can remotely check if the parking space
-    is available.
-
-
 '''
 
 import csv
