@@ -4,81 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Park It - Gallery</title>
+    <link rel="stylesheet" href="css/graphGallery.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="scripts/graphGallery.js"></script>
 </head>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-top: 50px;
-        }
-        h1 {
-            color: #0066cc;
-            text-align: center;
-            font-size: 40px;
-        }
-        .topnav {
-            background-color: #315781;
-            overflow: hidden;
-            display: flex;                /* Use flexbox */
-            justify-content: center;      /* Center horizontally */
-            align-items: center;          /* Align items vertically */
-        }
-
-        .topnav a {
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            margin: 0 10px;               /* Add horizontal margin between links */
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .topnav a.active {
-            background-color: hsl(206, 73%, 54%);
-            color: white;
-        }
-    .button {
-        background-color: #4CAF50; /* Green background */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 10px 5px;
-        cursor: pointer; /* Add a pointer cursor on hover */
-    }
-    .button-blue {
-        background-color: #007bff; /* Blue background */
-    }
-    .button-blue:hover {
-        background-color: #0056b3; /* Darker blue background on hover */
-    }
-    .gallery-navigation {
-        text-align: center;
-    }
-    .filedate {
-        font-size: 20px;
-        text-align: center;
-    }
-</style>
 <body>
     <div class="container">
         <h1>Park It!</h1>
@@ -88,99 +17,19 @@
             <a class="active" href="#graphGallery">Graph Gallery</a>
         </div>
         
-        <center><img id="galleryImage" src="" alt="Gallery Image" width="600" height="400"></center>
-        <div id="caption" class="filedate">Date of Graph Creation</div>
-        
-        <div class="gallery-navigation">
+        <div class="gallery" id="gal">
+            <center><img id="galleryImage" src="" alt="Gallery Image" width="600" height="350"></center>
+            <div id="caption" class="filedate">No Saved Graphs!</div>
+        </div>
+
+        <div class="gallery-navigation" id="gallery-nav">
             <button id="prevButton" class="button button-blue" onclick="previousImage()">Back</button>
             <button id="saveButton" class="button" onclick="saveImage()">Save Graph</button>
             <button id="nextButton" class="button button-blue" onclick="nextImage()">Next</button>
         </div>
     </div>
-
-    <script>
-        let images = [];
-        let currentImageIndex = 0;
-
-        // Fetch the list of images from the PHP file
-        fetch('list_graphs.php')
-            .then(response => response.json())
-            .then(data => {
-                images = data;
-                if (images.length > 0) {
-                    showImage(0); // Show the first image
-                }
-            })
-            .catch(error => console.error('Unable to load images:', error));
-
-        function showImage(index) {
-            currentImageIndex = index;
-            document.getElementById('galleryImage').src = images[index];
-            const filename = images[index].split('/').pop();
-            document.getElementById('caption').innerText = formatDateString(filename);
-            updateNavigation();
-        }
-
-        function updateNavigation() {
-            document.getElementById('prevButton').style.display = currentImageIndex > 0 ? '' : 'none';
-            document.getElementById('nextButton').style.display = currentImageIndex < images.length - 1 ? '' : 'none';
-        }
-
-        function nextImage() {
-            if (currentImageIndex < images.length - 1) {
-                showImage(currentImageIndex + 1);
-            }
-        }
-
-        function previousImage() {
-            if (currentImageIndex > 0) {
-                showImage(currentImageIndex - 1);
-            }
-        }
-
-        function saveImage() {
-            const currentImage = images[currentImageIndex];
-            const link = document.createElement('a');
-            link.href = currentImage;
-            link.download = currentImage.split('/').pop();
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        function formatDateString(inputString) {
-            // Extract the date and time part from the input string
-            const dateTimePattern = /(\d{4})-(\d{2})-(\d{2})-(\d{2})-(\d{2})-(\d{2})/;
-            const match = inputString.match(dateTimePattern);
-
-            if (!match) {
-                return "Invalid input string";
-            }
-
-            // Create a new Date object from the extracted parts
-            const year = match[1];
-            const month = parseInt(match[2], 10) - 1; // Month index is 0-based in JavaScript
-            const day = match[3];
-            const hour = match[4];
-            const minute = match[5];
-            const second = match[6];
-            const date = new Date(year, month, day, hour, minute, second);
-
-            // Define options for formatting the date
-            const options = {
-                weekday: 'long', // e.g., Monday
-                year: 'numeric', // e.g., 2024
-                month: 'long', // e.g., April
-                day: 'numeric', // e.g., 19
-                hour: 'numeric', // e.g., 13
-                minute: 'numeric', // e.g., 30
-                second: 'numeric', // e.g., 35
-                hour12: false // Use 24-hour format
-            };
-
-            // Use toLocaleDateString for locale-specific output
-            return "Graph generated: " + date.toLocaleDateString('en-US', options);
-        }
-    </script>
 </body>
+<footer>
+    Senior Capstone Project by Elijah Olsson, Jake Wantz, and Subhashree Susindran | Spring 2024 | <a href="https://github.com/olssone/parkit" target="_blank">"Park-It!" GitHub</a>
+</footer>
 </html>
