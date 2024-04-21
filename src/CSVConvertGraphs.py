@@ -67,7 +67,7 @@ def plot_and_save_graph(data, filename):
 
     plt.xlabel('Time', fontsize=24)  # x-axis
     plt.ylabel('Space Occupancy', fontsize=24)  # y-axis
-    plt.title('Live Parking Lot Status', fontsize=36)  # title label
+    plt.title('Parking Lot Status', fontsize=36)  # title label
     plt.yticks([0, 1], ['Space Vacant', 'Space Occupied'], fontsize=18)  # Adjusted font size for better fit
     plt.ylim(-0.1, 1.1)  # Adjust y-axis limits to close gap
     plt.grid(True)

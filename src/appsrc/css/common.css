@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 60px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+h1 {
+    color: #0066cc;
+    text-align: center;
+    font-size: 40px;
+}
+h2 {
+    color: #0066cc;
+    text-align: center;
+    font-size: 30px;
+}
+.topnav {
+    background-color: #315781;
+    overflow: hidden;
+    display: flex;                /* Use flexbox */
+    justify-content: center;      /* Center horizontally */
+    align-items: center;          /* Align items vertically */
+    border-radius: 10px; /* Rounded corners at the top left */
+    padding: 5px;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;               /* Add horizontal margin between links */
+    border-radius: 10px; /* Rounded corners at the top left */
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: hsl(206, 73%, 54%);
+    color: white;
+}
+
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 10px; /* Rounded corners at the top left */
+}
+.button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+.button-blue {
+    background-color: #007bff; /* Blue background */
+}
+.button-blue:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+footer {
+    width: 70%;
+    height: 60px; /* Set a fixed footer height */
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    left: 50%; /* Centering horizontally */
+    transform: translateX(-50%); /* Offset by half the width to truly center */
+    background-color: #315781; /* Dark background for footer */
+    color: white; /* Text color */
+    text-align: center;
+    line-height: 60px; /* Align text vertically */
+    box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    border-top-left-radius: 10px; /* Rounded corners at the top left */
+    border-top-right-radius: 10px; /* Rounded corners at the top right */
+}
+
+footer a {
+    color: #f39c12; /* Orange color for links */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
