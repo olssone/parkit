@@ -1,3 +1,16 @@
+'''
+
+        +----------------------------+
+        |    CSVConvertGraphs.py     |
+        +----------------------------+
+
+This Python script reads data from a CSV file containing information about parking space occupancy status
+over time, plots the data on a graph, and saves it as a PNG file. It is designed to visualize the
+occupancy of parking spaces, indicating whether each space is vacant or occupied at different points
+in time.
+
+'''
+
 from collections import deque
 import csv
 import matplotlib.pyplot as plt

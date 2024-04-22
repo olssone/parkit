@@ -1,0 +1,56 @@
+    
+File Name: dataAnalytics.html
+
+    Park It Data Analytics Page
+
+    This HTML file represents the data analytics page for the Park It system. It includes a navigation bar
+    for easy access to other pages, an image displaying the data analytics graph, and a button to save the live graph.
+
+    Dependencies: This page relies on an external CSS file for styling and an external JavaScript file for interactive functionality.
+
+    Functions:
+    - saveImage(): Function called when the "Save Live Graph" button is clicked to save the displayed graph as an image.
+
+    Note: The paths to the CSS file, JavaScript file, and image source should be adjusted based on the project directory structure.
+
+File Name: graphGallery.html
+
+    Park It Graph Gallery Page
+
+    This HTML file represents the graph gallery page for the Park It system. It includes a navigation bar
+    for easy access to other pages, a gallery to display saved graphs, and navigation buttons to browse through the gallery.
+
+    Dependencies: This page relies on two external CSS files for styling, an external JavaScript file for interactive functionality,
+    and potentially saved graph images whose paths are dynamically updated by the JavaScript.
+
+    Functions:
+    - previousImage(): Function called when the "Back" button is clicked to display the previous image in the gallery.
+    - nextImage(): Function called when the "Next" button is clicked to display the next image in the gallery.
+    - saveImage(): Function called when the "Save Graph" button is clicked to save the displayed graph as an image.
+
+    Note: The paths to the CSS files, JavaScript file, and potentially saved graph images should be adjusted based on the project directory structure.
+
+File Name: live.html
+
+    Park It Live Data Page
+
+    This HTML file represents the live data page for the Park It system. It includes a navigation bar
+    for easy access to other pages, a container to display live data, and a footer providing project details.
+
+    Dependencies: This page relies on two external CSS files for styling, an external JavaScript file for interactive functionality.
+
+    Note: The paths to the CSS files and JavaScript file should be adjusted based on the project directory structure.
+
+File Name: get_latest_data.php
+
+    Park It! Live Data PHP Script
+
+    This PHP script reads the last line of data from the "appsrc/data.txt" file and echoes it.
+    If the file is not accessible or does not exist, it displays a message indicating that the Park It!
+    system is offline and live data is not available.
+
+    Usage: This script is typically included in an HTML file to dynamically display live data on a web page.
+
+    Dependencies: This script depends on the existence and readability of the "appsrc/data.txt" file.
+    
+    Note: Adjust the file path as needed based on the actual directory structure of the project.
