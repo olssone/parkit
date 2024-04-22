@@ -1,0 +1,13 @@
+.gallery {
+    padding: 5px;
+}
+.gallery-navigation {
+    display: flex;          
+    justify-content: center; 
+    align-items: center;    
+    gap: 20px;             
+}
+.filedate {
+    font-size: 20px;
+    text-align: center;
+}
