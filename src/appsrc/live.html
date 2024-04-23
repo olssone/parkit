@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Park It! - Live Data</title>
+    <title>Live Data 🔴</title>
     <link rel="stylesheet" href="css/live.css">
     <link rel="stylesheet" href="css/common.css">
     <script src="scripts/live.js"></script>
@@ -16,7 +16,14 @@
             <a href="dataAnalytics.html">Data Analytics</a>
             <a href="graphGallery.html">Graph Gallery</a>
           </div>
-        <div id="dataDisplay">Waiting for data...</div>
+        <div id="sysStatusBar">
+            <div id="sysStatus" class="sysStatusBox">System Status: </div>
+            <div id="sysStarted" class="sysStatusBox">System Started On: </div>
+        </div>
+        <h3>Space Status</h3>
+        <div id="dataDisplay">Waiting for live data...</div>
+        <h3>Longest Parked Time</h3>
+        <div id="streakDisplay">Waiting for CSV data...</div>
     </div>
     <footer>
         Senior Capstone Project by Elijah Olsson, Jake Wantz, and Subhashree Susindran | Spring 2024 | <a href="https://github.com/olssone/parkit" target="_blank">"Park-It!" GitHub</a>

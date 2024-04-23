@@ -1,3 +1,15 @@
+'''
+
+        +----------------------------+
+        |     ParkitWatchDog.py      |
+        +----------------------------+
+
+This Python script serves as a watchdog for the Parkit system. It monitors the execution of 
+the main script 'ObjectOccupancyDetector.py', restarts it if it crashes, and logs system events. 
+The watchdog ensures that the system runs smoothly and handles any unexpected errors gracefully.
+        
+'''
+
 from datetime import datetime
 import shutil
 import subprocess
@@ -35,6 +47,7 @@ output_stream       = get_value_from_tag(sys_config, "system-output-location")
 log_file_location   = get_value_from_tag(sys_config, "log-file-location")
 gallery_location    = get_value_from_tag(sys_config, "gallery-location")
 graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
+streak_file_location = get_value_from_tag(sys_config, "streak-file-location")
 graph_base_name     = os.path.basename(graph_file_location)[0:-4]
 
 gallery_graph       = gallery_location + "/" + graph_base_name + "-" + get_formatted_datetime() + ".png"
@@ -70,7 +83,8 @@ try:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log(f"System started at {now}")
 
-        write_text_to_file(output_stream, f"Park-It is loading... ")
+        write_text_to_file(output_stream, "Park-It is loading... ")
+        write_text_to_file(streak_file_location, "No Streak Available.")
         process.wait()
         # Once process finishes, check its return code, then handle
         if process.returncode != 0:
@@ -79,6 +93,7 @@ try:
             log("System crashed. Restarting...")
             # Clean up
             os.remove(output_stream)
+            os.remove(streak_file_location)
             time.sleep(3)  
         else:
             update_xml_tag_value(sys_config, "status", "success")
@@ -86,6 +101,7 @@ try:
             copy_and_rename_file(graph_file_location, gallery_graph)
             # Clean up
             os.remove(output_stream)
+            os.remove(streak_file_location)
             break 
 except KeyboardInterrupt:
     # Log the keyboard interrupt
@@ -94,4 +110,5 @@ except KeyboardInterrupt:
     
     copy_and_rename_file(graph_file_location, gallery_graph)
     os.remove(output_stream)
+    os.remove(streak_file_location)
 

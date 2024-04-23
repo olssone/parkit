@@ -1,3 +1,16 @@
+'''
+
+        +----------------------------+
+        |       Adaptation.py        |
+        +----------------------------+
+
+This module provides utility functions for interacting with XML files, logging messages with timestamps,
+and writing/appending text to files. It includes functions to retrieve values from XML tags, update XML
+tag values, log messages to a specified file, and write or append text to files.
+
+
+'''
+
 import os
 import xml.etree.ElementTree as ET
 from datetime import datetime
