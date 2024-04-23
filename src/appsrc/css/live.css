@@ -21,7 +21,7 @@
     overflow: hidden;
     justify-content: center;      /* Center horizontally */
     align-items: center;          /* Align items vertically */
-    padding: 5px;
+    padding-top: 20px;
 }
 
 .sysStatusBox {
