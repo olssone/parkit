@@ -96,3 +96,54 @@ def plot_and_save_graph(data, filename):
 
     # Save the plot as a PNG file
     plt.savefig(filename)
+
+# This function will parse the CSV file and determine the longest streak of
+# the parking space being occupied
+
+def parse_datetime(date_str):
+    return datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
+
+def find_longest_streak(file_path):
+    longest_streak = 0
+    current_streak = 0
+    streak_start = None
+    streak_end = None
+    longest_streak_start = None
+    longest_streak_end = None
+
+    with open(file_path, mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)
+
+        for row in reader:
+            if row:  # check if the row is not empty
+                if row[0].startswith('#'):
+                    continue  # skip comments
+                status = row[1].strip()
+                timestamp = row[2].strip()
+
+                if status == "CAR IN SPACE":
+                    current_streak += 1
+                    if current_streak == 1:
+                        streak_start = timestamp
+                    streak_end = timestamp
+                else:
+                    if current_streak > longest_streak:
+                        longest_streak = current_streak
+                        longest_streak_start = streak_start
+                        longest_streak_end = streak_end
+                    current_streak = 0
+
+        # Check last streak at the end of file
+        if current_streak > longest_streak:
+            longest_streak = current_streak
+            longest_streak_start = streak_start
+            longest_streak_end = streak_end
+
+    # Calculate the duration of the longest streak
+    if longest_streak_start and longest_streak_end:
+        duration = parse_datetime(longest_streak_end) - parse_datetime(longest_streak_start)
+        log(f"Longest Streak: {longest_streak} times. Start: {longest_streak_start}. \
+            End: {longest_streak_end}. Duration: {duration}")
+        return f"{longest_streak_start},{longest_streak_end }"
+

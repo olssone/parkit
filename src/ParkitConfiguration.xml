@@ -1,19 +1,7 @@
-<!--
-
-    +////////////////////////////////+
-    |     ParkitConfiguration.xml    |
-    +////////////////////////////////+
-
-    This XML configuration file contains settings for the Parkit system, including space definitions,
-    YOLOv5 model settings, data paths, and system status.
-
--->
-
-
 <parkit>
     <space-definition>
-        <space-x>950</space-x>
-        <space-y>70</space-y>
+        <space-x>300</space-x>
+        <space-y>350</space-y>
         
         <space-width>500</space-width>
         <space-height>200</space-height>
@@ -33,6 +21,7 @@
         <gallery-location>src/appsrc/gallery</gallery-location>
         <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
         <system-output-location>src/appsrc/data.txt</system-output-location>
+        <streak-file-location>src/appsrc/streak.txt</streak-file-location>
         <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>
     </data>
     <status>success</status>
