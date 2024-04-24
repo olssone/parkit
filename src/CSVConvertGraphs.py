@@ -50,7 +50,7 @@ def read_csv(filename):
                 continue  # Skip any row that starts with "#"
 
             # Append current status to the sliding window
-            window.append(row[1] == 'CAR IN SPACE')
+            window.append(row[1] == 'CAR PRESENT')
 
             # Determine if a car is present based on the sliding window
             # Considering true if the majority within the window are 'CAR IN SPACE'
@@ -123,7 +123,7 @@ def find_longest_streak(file_path):
                 status = row[1].strip()
                 timestamp = row[2].strip()
 
-                if status == "CAR IN SPACE":
+                if status == "CAR PRESENT":
                     current_streak += 1
                     if current_streak == 1:
                         streak_start = timestamp
@@ -173,7 +173,7 @@ def find_best_time_to_park_and_analytics(csv_file):
             if last_time is not None:
                 if (time - last_time).seconds <= 300:  # Allow for a gap of up to 5 minutes
                     interval = time - last_time
-                    if status == 'CAR NOT IN SPACE':
+                    if status == 'NO CAR PRESENT':
                         unoccupied_time += interval
                         interval_minutes = (time.hour, time.minute // 15 * 15)
                         unoccupied_intervals[interval_minutes] += interval.total_seconds()

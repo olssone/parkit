@@ -177,7 +177,7 @@ while True:
     occupied, _ = check_occupation(frame, rect, reference_frame)
     if occupied and occupied_start_time:
         if time.time() - occupied_start_time > occupied_timer:
-            msg_occu = "SPACE OCCUPIED"
+            msg_occu = "OCCUPIED"
             cv2.putText(frame, msg_occu, (rect[0], rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
             confirmed_occupied = True
             
@@ -192,7 +192,7 @@ while True:
             # Filter predictions for 'car' detections
             car_detections = predictions_df[predictions_df['name'] == 'car']
             if len(car_detections) > 0:
-                msg_car = "CAR IN SPACE"          
+                msg_car = "CAR PRESENT"          
 
                 # Iterate through each car detection to draw a rectangle if the car is in the space
                 for index, row in car_detections.iterrows():
@@ -205,13 +205,13 @@ while True:
 
             else:
                 # Car is not in space
-                msg_car = "CAR NOT IN SPACE"
+                msg_car = "NO CAR PRESENT"
 
             cv2.putText(frame, msg_car, (rect[0]+300, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
 
     else:
-        msg_occu = "SPACE NOT OCCUPIED"
-        msg_car  = "CAR NOT IN SPACE"
+        msg_occu = "NOT OCCUPIED"
+        msg_car  = "NO CAR PRESENT"
         confirmed_occupied = False
 
     formated_data = f"{msg_occu} - {msg_car}"
