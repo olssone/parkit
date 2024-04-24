@@ -35,7 +35,7 @@ from yolov5 import YOLOv5
 # Custom libraries
 from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file, append_text_to_file
 
-from CSVConvertGraphs import parse_datetime, plot_and_save_graph, read_csv, find_longest_streak
+from CSVConvertGraphs import parse_datetime, plot_and_save_graph, read_csv, find_longest_streak, find_best_time_to_park_and_analytics
 
 # System Configuration File
 sys_config = "src/ParkitConfiguration.xml"
@@ -70,11 +70,13 @@ rect = [rectx, recty, rectw, recth]
 # Load a pre-trained YOLOv5 model on the application server CPU
 yolov5_model = YOLOv5(weights, device=resource)  
 
-prev_saved_rframe    = get_value_from_tag(sys_config, "rframe-save-location")
-data_output_fd       = get_value_from_tag(sys_config, "system-output-location")
-csv_file_location    = get_value_from_tag(sys_config, "csv-file-location")
-graph_file_location  = get_value_from_tag(sys_config, "data-analytics-graph")
-streak_file_location = get_value_from_tag(sys_config, "streak-file-location")
+prev_saved_rframe     = get_value_from_tag(sys_config, "rframe-save-location")
+data_output_fd        = get_value_from_tag(sys_config, "system-output-location")
+csv_file_location     = get_value_from_tag(sys_config, "csv-file-location")
+graph_file_location   = get_value_from_tag(sys_config, "data-analytics-graph")
+streak_file_location  = get_value_from_tag(sys_config, "streak-file-location")
+optimal_file_location = get_value_from_tag(sys_config, "optimal-file-location")
+total_csv_location    = get_value_from_tag(sys_config, "total-csv-location")
 
 # Reference frame used when checking occupancy
 # Use previously loaded reference frame if the status is marked as failed
@@ -237,6 +239,9 @@ while True:
         append_text_to_file(csv_file_location, csv_data)
         data = read_csv(csv_file_location)
         times = find_longest_streak(csv_file_location)
+        # Read total csv
+        besttime = find_best_time_to_park_and_analytics(total_csv_location)
+        write_text_to_file(optimal_file_location, besttime)
         if times:
             start_time, end_time = times.split(',')
             write_text_to_file(streak_file_location, f"{start_time} {end_time} {parse_datetime(end_time) - parse_datetime(start_time)}")

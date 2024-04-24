@@ -8,4 +8,5 @@ src/data/*
 src/appsrc/csv/*
 src/appsrc/png/*
 src/appsrc/data.txt
+src/appsrc/optimal.txt
 src/appsrc/gallery/*

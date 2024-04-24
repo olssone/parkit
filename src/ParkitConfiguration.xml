@@ -18,10 +18,12 @@
         <log-file-location>src/data/parkit.log</log-file-location>
         <data-analytics-graph>src/appsrc/png/parkit-data-analytics-graph.png</data-analytics-graph>
         <csv-file-location>src/appsrc/csv/parkit-data.csv</csv-file-location>
+        <total-csv-location>src/appsrc/csv/total-parkit.csv</total-csv-location>
         <gallery-location>src/appsrc/gallery</gallery-location>
         <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
         <system-output-location>src/appsrc/data.txt</system-output-location>
         <streak-file-location>src/appsrc/streak.txt</streak-file-location>
+        <optimal-file-location>src/appsrc/optimal.txt</optimal-file-location>
         <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>
     </data>
     <status>success</status>
