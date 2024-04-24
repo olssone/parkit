@@ -11,11 +11,12 @@ in time.
 
 '''
 
-from collections import deque
+from collections import defaultdict, deque
 import csv
 import matplotlib.pyplot as plt
-from datetime import datetime
-from matplotlib.lines import Line2D  # Import this for custom legend handles
+from datetime import datetime, timedelta
+from matplotlib.lines import Line2D
+import pandas as pd  # Import this for custom legend handles
 from Adaptation import get_value_from_tag, log  # Assuming you have a function to get values from XML
 
 # Path to system configuration file
@@ -147,3 +148,77 @@ def find_longest_streak(file_path):
             End: {longest_streak_end}. Duration: {duration}")
         return f"{longest_streak_start},{longest_streak_end }"
 
+
+
+
+def find_best_time_to_park_and_analytics(csv_file):
+    with open(csv_file, 'r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip header line
+        
+        occupied_time = timedelta(0)
+        unoccupied_time = timedelta(0)
+        last_time = None
+        unoccupied_intervals = defaultdict(int)
+
+        # Pre-populate the dictionary for all 15-minute intervals in a day
+        for hour in range(24):
+            for minute in [0, 15, 30, 45]:
+                unoccupied_intervals[(hour, minute)] = 0
+
+        for row in reader:
+            status, time_str = row[1], row[2]  # Assuming 'Status' is the first and 'Time' is the third column
+            time = datetime.strptime(time_str, '%Y-%m-%d %H:%M:%S')
+            
+            if last_time is not None:
+                if (time - last_time).seconds <= 300:  # Allow for a gap of up to 5 minutes
+                    interval = time - last_time
+                    if status == 'CAR NOT IN SPACE':
+                        unoccupied_time += interval
+                        interval_minutes = (time.hour, time.minute // 15 * 15)
+                        unoccupied_intervals[interval_minutes] += interval.total_seconds()
+                    else:
+                        occupied_time += interval
+
+            last_time = time
+
+        # Calculate total time
+        total_time = occupied_time + unoccupied_time
+        occupied_percentage = (occupied_time / total_time * 100) if total_time > timedelta(0) else 0
+        unoccupied_percentage = (unoccupied_time / total_time * 100) if total_time > timedelta(0) else 0
+
+        # Find the 15-minute interval with the maximum unoccupied time
+        best_15_min = max(unoccupied_intervals, key=unoccupied_intervals.get)
+        best_15_min_time = f"{best_15_min[0]:02}:{best_15_min[1]:02}"
+
+        return (
+            f"{occupied_percentage:.2f},{unoccupied_percentage:.2f},{best_15_min_time}"
+        )
+
+
+def append_file_to_file(source_path, dest_path):
+    # Initialize a list to hold the rows of data to be appended
+    data_to_append = []
+
+    # Open the source file and read data, skipping comments and the header
+    with open(source_path, mode='r', newline='', encoding='utf-8') as source_file:
+        reader = csv.reader(source_file)
+        header_skipped = False
+
+        for row in reader:
+            # Skip rows that are comments
+            if row[0].startswith('#'):
+                continue
+
+            # Skip the first non-comment row as it is the header
+            if not header_skipped:
+                header_skipped = True
+                continue
+
+            # Append non-header, non-comment rows to the list
+            data_to_append.append(row)
+
+    # Open the destination file in append mode and write the data
+    with open(dest_path, mode='a', newline='', encoding='utf-8') as dest_file:
+        writer = csv.writer(dest_file)
+        writer.writerows(data_to_append)

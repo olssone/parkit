@@ -2,6 +2,7 @@
 // File paths
 $filePath1 = '../data.txt';
 $filePath2 = '../streak.txt';
+$filePath3 = '../optimal.txt';
 
 $data = array();
 
@@ -20,6 +21,19 @@ if (file_exists($filePath2) && is_readable($filePath2)) {
 } else {
     $data['streak'] = 'CSV data is not available.';
 }
+
+// Read from filePath3
+if (file_exists($filePath3) && is_readable($filePath3)) {
+    $fields = str_getcsv(file_get_contents($filePath3));
+    $data['occupiedPercentage'] = $fields[0];
+    $data['unoccupiedPercentage'] = $fields[1];
+    $data['optimalTime'] = $fields[2];
+} else {
+    $data['occupiedPercentage'] = 'NULL';
+    $data['unoccupiedPercentage'] = 'NULL';
+    $data['optimalTime'] = 'NULL';
+}
+
 
 // Return both values in JSON format
 echo json_encode($data);
