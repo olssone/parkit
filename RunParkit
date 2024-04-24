@@ -8,12 +8,13 @@ if [[ ${wd} != "parkit" ]]; then
     echo "You are working in: '${wd}'"
     echo "You need to be in:  'parkit'"
 else
-    for i in src/data src/appsrc/png src/appsrc/csv src/appsrc/gallery; do
+    for i in src/data src/appsrc/png src/appsrc/csv src/appsrc/gallery src/appsrc/gallery/*; do
         mkdir -p ${i}
+        chmod 777 ${i}
     done
 
     if [[ ! -f ${errorfnamepath} ]]; then
         echo $(date) > ${errorfnamepath}
     fi
-    /usr/bin/python3 src/ParkitWatchDog.py 2>${errorfnamepath}
+    python3 src/ParkitWatchDog.py 2>${errorfnamepath}
 fi

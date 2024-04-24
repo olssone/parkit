@@ -74,8 +74,14 @@ h2 {
 .button-blue {
     background-color: #007bff; /* Blue background */
 }
+.button-red {
+    background-color: #d61e1e; /* Blue background */
+}
 .button-blue:hover {
     background-color: #0056b3; /* Darker blue background on hover */
+}
+.button-red:hover {
+    background-color: #ed3030; /* Darker blue background on hover */
 }
 
 footer {

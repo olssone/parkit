@@ -40,20 +40,20 @@ def copy_and_rename_file(source, destination):
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 log(f"Watch dog started at {now}")
 
-sys_config          = "src/ParkitConfiguration.xml"
-main_script         = "src/ObjectOccupancyDetector.py"
-csv_file            = get_value_from_tag(sys_config, "csv-file-location")
-csv_columns         = get_value_from_tag(sys_config, "csv-column-names")
-target_total_csv    = get_value_from_tag(sys_config, "total-csv-location")
-output_stream       = get_value_from_tag(sys_config, "system-output-location")
-log_file_location   = get_value_from_tag(sys_config, "log-file-location")
-gallery_location    = get_value_from_tag(sys_config, "gallery-location")
-graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
-streak_file_location = get_value_from_tag(sys_config, "streak-file-location")
+sys_config            = "src/ParkitConfiguration.xml"
+main_script           = "src/ObjectOccupancyDetector.py"
+csv_file              = get_value_from_tag(sys_config, "csv-file-location")
+csv_columns           = get_value_from_tag(sys_config, "csv-column-names")
+target_total_csv      = get_value_from_tag(sys_config, "total-csv-location")
+output_stream         = get_value_from_tag(sys_config, "system-output-location")
+log_file_location     = get_value_from_tag(sys_config, "log-file-location")
+gallery_location      = get_value_from_tag(sys_config, "gallery-location")
+graph_file_location   = get_value_from_tag(sys_config, "data-analytics-graph")
+streak_file_location  = get_value_from_tag(sys_config, "streak-file-location")
 optimal_file_location = get_value_from_tag(sys_config, "optimal-file-location")
-graph_base_name     = os.path.basename(graph_file_location)[0:-4]
+graph_base_name       = os.path.basename(graph_file_location)[0:-4]
 
-gallery_graph       = gallery_location + "/" + graph_base_name + "-" + get_formatted_datetime() + ".png"
+gallery_graph         = gallery_location + "/" + graph_base_name + "-" + get_formatted_datetime() + ".png"
 
 # Added protection as RunParkit script already performs this check.
 current_directory = os.path.basename(os.getcwd())

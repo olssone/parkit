@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Data 🔴</title>
-    <link rel="stylesheet" href="css/live.css">
+    <title>Data Analytics</title>
     <link rel="stylesheet" href="css/common.css">
-    <script src="scripts/live.js"></script>
+    <script src="scripts/liveGraph.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Park It!</h1>
         <div class="topnav">
-            <a class="active" href="#live">Live Data</a>
             <a href="dataAnalytics.html">Data Analytics</a>
+            <a class="active" href="#liveGraph">Live Graph</a>
             <a href="graphGallery.html">Graph Gallery</a>
-          </div>
-        <div id="sysStatusBar">
-            <div id="sysStatus" class="sysStatusBox">System Status: </div>
-            <div id="sysStarted" class="sysStatusBox">System Started On: </div>
         </div>
-        <h3>Space Status</h3>
-        <div id="dataDisplay">Waiting for live data...</div>
-        <h3>Longest Parked Time</h3>
-        <div id="streakDisplay">Waiting for CSV data...</div>
+        <center><img id="dataImage" src="./png/parkit-data-analytics-graph.png" width="600" height="350"></center>
+        <center><button class="button" onclick="saveImage()">Save Live Graph</button></center>
     </div>
     <footer>
         Senior Capstone Project by Elijah Olsson, Jake Wantz, and Subhashree Susindran | Spring 2024 | <a href="https://github.com/olssone/parkit" target="_blank">"Park-It!" GitHub</a>
     </footer>
 </body>
 </html>
-

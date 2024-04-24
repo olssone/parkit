@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics</title>
+    <title>Live Data 🔴</title>
+    <link rel="stylesheet" href="css/dataAnalytics.css">
     <link rel="stylesheet" href="css/common.css">
     <script src="scripts/dataAnalytics.js"></script>
 </head>
@@ -11,12 +12,36 @@
     <div class="container">
         <h1>Park It!</h1>
         <div class="topnav">
-            <a href="live.html">Live Data</a>
             <a class="active" href="#dataAnalytics">Data Analytics</a>
+            <a href="liveGraph.html">Live Graph</a>
             <a href="graphGallery.html">Graph Gallery</a>
         </div>
-        <center><img id="dataImage" src="./png/parkit-data-analytics-graph.png" width="600" height="350"></center>
-        <center><button class="button" onclick="saveImage()">Save Live Graph</button></center>
+        <div class="section">
+            <h3>Status</h3>
+            <div id="sysStatus">Loading...</div>
+        </div>
+        <div class="section">
+            <h3>System Started</h3>
+            <div id="sysStarted">Loading...</div>
+        </div>
+        <div class="section">
+            <h3>Space Status</h3>
+            <div id="occupiedStatus">Loading...</div>
+            <div id="spaceStatus">Loading...</div>
+        </div>
+        <div class="section">
+            <h3>Space Utilization</h3>
+            <div id="occupiedPercentage">% Occupied</div>
+            <div id="unoccupiedPercentage">% Unoccupied</div>
+        </div>
+        <div class="section">
+            <h3>Longest Parked</h3>
+            <div id="streakDisplay">Loading...</div>
+        </div>
+        <div class="section">
+            <h3>Time to Parkit!</h3>
+            <div id="optimalTime">Loading...</div>
+        </div>
     </div>
     <footer>
         Senior Capstone Project by Elijah Olsson, Jake Wantz, and Subhashree Susindran | Spring 2024 | <a href="https://github.com/olssone/parkit" target="_blank">"Park-It!" GitHub</a>
