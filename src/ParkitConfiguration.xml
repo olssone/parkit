@@ -1,7 +1,7 @@
 <parkit>
     <space-definition>
-        <space-x>550</space-x>
-        <space-y>450</space-y>
+        <space-x>550</space-x> 
+        <space-y>450</space-y> 
         
         <space-width>500</space-width>
         <space-height>200</space-height>
@@ -21,10 +21,10 @@
         <total-csv-location>src/appsrc/csv/total-parkit.csv</total-csv-location>
         <gallery-location>src/appsrc/gallery</gallery-location>
         <csv-column-names>occupancyStatus,vehicleStatus,dateTime,spaceX,spaceY,spaceWidth,spaceHeight</csv-column-names>
-        <system-output-location>src/appsrc/data.txt</system-output-location>
+        <system-output-location>src/appsrc/data.txt</system-output-location> 
         <streak-file-location>src/appsrc/streak.txt</streak-file-location>
         <optimal-file-location>src/appsrc/optimal.txt</optimal-file-location>
-        <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>
+        <rframe-save-location>src/data/PreviousReferenceFrame.npy</rframe-save-location>   
     </data>
     <status>success</status>
 </parkit>
