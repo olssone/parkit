@@ -17,9 +17,9 @@ This Python program contains all application "Park It!" system components:
     for cars. The intended use of this ML algorithm is to verify that the object
     occupying the parking space is indeed a vehicle.
 
+
 '''
 
-import csv
 from datetime import datetime
 import cv2
 import time
@@ -29,7 +29,7 @@ from yolov5 import YOLOv5
 # Custom libraries
 from Adaptation import get_value_from_tag, update_xml_tag_value, log, write_text_to_file, append_text_to_file
 
-from CSVConvertGraphs import plot_and_save_graph, read_csv
+from CSVConvertGraphs import parse_datetime, plot_and_save_graph, read_csv, find_longest_streak, find_best_time_to_park_and_analytics
 
 # System Configuration File
 sys_config = "src/ParkitConfiguration.xml"
@@ -44,8 +44,8 @@ move_dist = int(get_value_from_tag(sys_config, "move-dist"))
 log(f"Space Dimensions: x={rectx}, y={recty}, width={rectw}, height={recth}, move-dist={move_dist}")
 
 # YOLOv5 data
-weights  = get_value_from_tag(sys_config, "weights")
-resource = get_value_from_tag(sys_config, "resource")
+weights   = get_value_from_tag(sys_config, "weights")
+resource  = get_value_from_tag(sys_config, "resource")
 log(f"YOLOv5: weights={weights}, device={resource}")
 
 # Timers - used to track how long the space has been occupied
@@ -54,7 +54,7 @@ occupied_start_time = None
 
 # Data - input and save locations
 camera = int(get_value_from_tag(sys_config, "camera"))
-prev_saved_rframe = get_value_from_tag(sys_config, "rframe-save-location")
+
 
 # Variables and objects used in application...
 # Rectangle parameters: [x, y, width, height]
@@ -64,10 +64,13 @@ rect = [rectx, recty, rectw, recth]
 # Load a pre-trained YOLOv5 model on the application server CPU
 yolov5_model = YOLOv5(weights, device=resource)  
 
-
-data_output_fd = get_value_from_tag(sys_config, "system-output-location")
-csv_file_location = get_value_from_tag(sys_config, "csv-file-location")
-graph_file_location = get_value_from_tag(sys_config, "data-analytics-graph")
+prev_saved_rframe     = get_value_from_tag(sys_config, "rframe-save-location")
+data_output_fd        = get_value_from_tag(sys_config, "system-output-location")
+csv_file_location     = get_value_from_tag(sys_config, "csv-file-location")
+graph_file_location   = get_value_from_tag(sys_config, "data-analytics-graph")
+streak_file_location  = get_value_from_tag(sys_config, "streak-file-location")
+optimal_file_location = get_value_from_tag(sys_config, "optimal-file-location")
+total_csv_location    = get_value_from_tag(sys_config, "total-csv-location")
 
 # Reference frame used when checking occupancy
 # Use previously loaded reference frame if the status is marked as failed
@@ -89,6 +92,7 @@ last_car = ""
 last_occu = ""
 
 csv_write_timer = time.time()
+longest_streak  = 0
 
 # check_occupation - Check if live video frame is occupied
 def check_occupation(frame, rect, reference_frame):
@@ -167,7 +171,7 @@ while True:
     occupied, _ = check_occupation(frame, rect, reference_frame)
     if occupied and occupied_start_time:
         if time.time() - occupied_start_time > occupied_timer:
-            msg_occu = "SPACE OCCUPIED"
+            msg_occu = "OCCUPIED"
             cv2.putText(frame, msg_occu, (rect[0], rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
             confirmed_occupied = True
             
@@ -182,7 +186,7 @@ while True:
             # Filter predictions for 'car' detections
             car_detections = predictions_df[predictions_df['name'] == 'car']
             if len(car_detections) > 0:
-                msg_car = "CAR IN SPACE"          
+                msg_car = "CAR PRESENT"          
 
                 # Iterate through each car detection to draw a rectangle if the car is in the space
                 for index, row in car_detections.iterrows():
@@ -195,13 +199,13 @@ while True:
 
             else:
                 # Car is not in space
-                msg_car = "CAR NOT IN SPACE"
+                msg_car = "NO CAR PRESENT"
 
             cv2.putText(frame, msg_car, (rect[0]+300, rect[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2)
 
     else:
-        msg_occu = "SPACE NOT OCCUPIED"
-        msg_car  = "CAR NOT IN SPACE"
+        msg_occu = "NOT OCCUPIED"
+        msg_car  = "NO CAR PRESENT"
         confirmed_occupied = False
 
     formated_data = f"{msg_occu} - {msg_car}"
@@ -219,15 +223,24 @@ while True:
         write_text_to_file(data_output_fd, formated_data)
 
     current_time = time.time()
-    elapsed_time_csv = current_time - csv_write_timer
-    
+    elapsed_time_csv   = current_time - csv_write_timer
+
+    # Basically a two second timer
     if elapsed_time_csv > 2 and msg_occu and msg_occu is not None:
         csv_write_timer = time.time()
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         csv_data = f"{msg_occu},{msg_car},{timestamp},{rectx},{recty},{rectw},{recth}"
         append_text_to_file(csv_file_location, csv_data)
         data = read_csv(csv_file_location)
+        times = find_longest_streak(csv_file_location)
+        # Read total csv
+        besttime = find_best_time_to_park_and_analytics(total_csv_location)
+        write_text_to_file(optimal_file_location, besttime)
+        if times:
+            start_time, end_time = times.split(',')
+            write_text_to_file(streak_file_location, f"{start_time} {end_time} {parse_datetime(end_time) - parse_datetime(start_time)}")
         plot_and_save_graph(data, graph_file_location)
+
 
     cv2.imshow('frame', frame)
 

@@ -1,46 +1,21 @@
 #!/bin/ksh
 
-# Get the current working directory
-wd=$(pwd)
+pwd=$(pwd)
+wd=$(basename ${pwd})
+errorfnamepath="src/data/errors.log"
 
-# Combine with relative path for error log
-errorfnamepath="${wd}/src/data/errors.log"
-
-if [[ $(basename "$wd") != "parkit" ]]; then
-    echo "You are working in: '$(basename "$wd")'"
+if [[ ${wd} != "parkit" ]]; then
+    echo "You are working in: '${wd}'"
     echo "You need to be in:  'parkit'"
 else
     for i in src/data src/appsrc/png src/appsrc/csv src/appsrc/gallery src/appsrc/gallery/*; do
-        mkdir -p "${wd}/${i}"
-        chmod 777 "${wd}/${i}"
+        mkdir -p ${i}
+        chmod 777 ${i}
     done
 
     if [[ ! -f ${errorfnamepath} ]]; then
-        echo $(date) > "${errorfnamepath}"
+        echo $(date) > ${errorfnamepath}
     fi
-    python3 "${wd}/src/ParkitWatchDog.py" 2>"${errorfnamepath}"
+    python3 src/ParkitWatchDog.py 2>${errorfnamepath}
 fi
 
-
-
-
-# #!/bin/ksh
-
-# pwd=$(pwd)
-# wd=$(basename ${pwd})
-# errorfnamepath="src/data/errors.log"
-
-# if [[ ${wd} != "parkit" ]]; then
-#     echo "You are working in: '${wd}'"
-#     echo "You need to be in:  'parkit'"
-# else
-#     for i in src/data src/appsrc/png src/appsrc/csv src/appsrc/gallery src/appsrc/gallery/*; do
-#         mkdir -p ${i}
-#         chmod 777 ${i}
-#     done
-
-#     if [[ ! -f ${errorfnamepath} ]]; then
-#         echo $(date) > ${errorfnamepath}
-#     fi
-#     python3 src/ParkitWatchDog.py 2>${errorfnamepath}
-# fi
