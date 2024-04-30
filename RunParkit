@@ -18,3 +18,4 @@ else
     fi
     python3 src/ParkitWatchDog.py 2>${errorfnamepath}
 fi
+
