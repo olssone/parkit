@@ -1,5 +1,9 @@
 # Park It!
-Parking Space Monitoring System for Senior Project. Spring 2024.
+Parking Space Monitoring System for Hood College CS Senior Project. Spring 2024.
+
+Olsson, Elijah
+Susindran, Subhashree
+Wantz, Jake
 
 ## Installation:
 Enter all the commands in order, one at a time!
