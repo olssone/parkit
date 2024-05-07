@@ -3,6 +3,8 @@ Parking Space Monitoring System for Hood College CS Senior Project. Spring 2024.
 
 Software Project by Elijah Olsson, Subhashree Susindran, and Jake Wantz.
 
+[Link text](https://github.com/olssone/parkit)
+
 ## Installation:
 Enter all the commands in order, one at a time!
 ### Install Repo Dependencies
